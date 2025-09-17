@@ -11,44 +11,61 @@
             });
         </script> 
 		<style>
-			/* Add this to your main CSS file or a <style> tag in the <head> */
-			.grid-container-chairs {
-				display: grid;
-				grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-				gap: 2em;
-				margin-bottom: 2em;
-			}
-			.chair-card {
-				text-align: center;
-			}
-			.chair-card a {
-				border-bottom: none;
-				text-decoration: none;
-			}
-			.chair-card .avatar {
-				border-radius: 50%;
-				margin-bottom: 1em;
-				width: 160px;
-				height: 160px;
-				object-fit: cover;
-			}
-			.chair-info {
-				display: block;
-				margin-top: 1em;
-			}
-			.chair-name {
-				font-size: 1.2em;
-				font-weight: bold;
-				display: block;
-			}
-			.chair-affiliation {
-				font-size: 0.9em;
-				font-style: italic;
-				color: #888;
-				display: block;
-				line-height: 1.4;
-			}
-		</style>
+    .content-card {
+        background-color: #f9f9f9; /* Light background for the card */
+        border: 1px solid #e0e0e0;   /* Subtle border */
+        border-radius: 8px;           /* Rounded corners */
+        padding: 1.5em;               /* Internal spacing */
+        margin-bottom: 2em;           /* Space between cards */
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Soft shadow effect */
+    }
+
+    /* Flexbox layout for the co-chairs */
+    .chairs-container {
+        display: flex;                /* Use Flexbox for alignment */
+        flex-wrap: wrap;              /* Allow items to wrap on smaller screens */
+        justify-content: center;      /* Center the items */
+        gap: 2em;                     /* Space between chair profiles */
+    }
+
+    .chair-profile {
+        text-align: center;
+        flex: 1;                      /* Allow profiles to grow */
+        min-width: 250px;             /* Minimum width before wrapping */
+        max-width: 300px;             /* Maximum width */
+    }
+
+    .chair-profile a {
+        border-bottom: none;
+        text-decoration: none;
+        color: inherit; /* Inherit text color */
+    }
+
+    .chair-profile .avatar {
+        border-radius: 50%;
+        width: 160px;
+        height: 160px;
+        object-fit: cover; /* Ensures the image covers the area without distortion */
+        margin-bottom: 1em;
+        border: 3px solid #fff;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    
+    .chair-info .name {
+        font-size: 1.3em;
+        font-weight: 600;
+        display: block;
+        color: #333;
+    }
+
+    .chair-info .affiliation {
+        font-size: 0.9em;
+        font-style: italic;
+        color: #777;
+        display: block;
+        line-height: 1.4;
+    }
+</style>
 
 	</head>
 <body class="is-preload">
@@ -160,38 +177,38 @@
 
     <p>Our Science Collaboration includes over 520 members as of December 2023, spanning 5 continents. The diagram above shows the organizational structure of TVS. Contact our chairs for more information!</p>
 
-    <ul class="actions">
+    <<ul class="actions">
         <li><a href="https://tvs.science.lsst.org/?q=apply" target="_blank" rel="noopener noreferrer" class="button large">Apply to become a member!</a></li>
     </ul>
 
-    <section class="post-content">
+    <section class="content-card">
         <h2>Co-Chairs</h2>
-        <div class="grid-container-chairs">
-            <div class="chair-card">
+        <div class="chairs-container">
+            <div class="chair-profile">
                 <a href="https://www.igorandreoni.com" target="_blank" rel="noopener noreferrer">
-                    <img class="avatar" src="images/igor.jpg" alt="Avatar of Igor Andreoni">
-                    <span class="chair-info">
-                        <span class="chair-name">Igor Andreoni</span>
-                        <span class="chair-affiliation">University of North Carolina at Chapel Hill</span>
-                    </span>
+                    <img class="avatar" src="images/igor.jpg" alt="Profile photo of Igor Andreoni">
+                    <div class="chair-info">
+                        <span class="name">Igor Andreoni</span>
+                        <span class="affiliation">University of North Carolina at Chapel Hill</span>
+                    </div>
                 </a>
             </div>
-            <div class="chair-card">
+            <div class="chair-profile">
                 <a href="http://www.astropa.inaf.it/en/personal-pages/sara-bonito/" target="_blank" rel="noopener noreferrer">
-                    <img class="avatar" src="images/sara.jpg" alt="Avatar of Sara Bonito">
-                    <span class="chair-info">
-                        <span class="chair-name">Sara Bonito</span>
-                        <span class="chair-affiliation">INAF, Osservatorio Astronomico di Palermo</span>
-                    </span>
+                    <img class="avatar" src="images/sara.jpg" alt="Profile photo of Sara Bonito">
+                    <div class="chair-info">
+                        <span class="name">Sara Bonito</span>
+                        <span class="affiliation">INAF, Osservatorio Astronomico di Palermo</span>
+                    </div>
                 </a>
             </div>
         </div>
     </section>
 
-    <section class="post-content">
+    <section class="content-card">
         <h2>Members Roster</h2>
         <div class="iframe-container">
-            <iframe title="TVS Members Roster Spreadsheet" style="width:100%; height:500px; border:none;" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTs0wS3762nrlIzWHvJYuhBPMo96O0aksnFfd1FAxLOL9k2WPjDUyB2TsYS3BqsEieElQYGPRjbh-_/pubhtml?gid=835096946&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+            <iframe title="TVS Members Roster embedded from Google Sheets" style="width:100%; height:500px; border:none; border-radius: 6px;" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTs0wS3762nrlIzWHvJYuhBPMo96O0aksnFfd1FAxLOL9k2WPj1DUyB2TsYS3BqsEieElQYGPRjbh-_/pubhtml?gid=835096946&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
         </div>
     </section>
 </article>
