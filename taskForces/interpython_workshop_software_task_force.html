@@ -1,0 +1,431 @@
+<!-- <!DOCTYPE HTML>
+<html>
+	<head>
+		<title>TVS Intermediate Python for Astronomical Software Development</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			/* Custom styles to replicate feature grid and logo layout */
+			.features-grid {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 2em;
+				justify-content: center;
+				text-align: center;
+				margin-top: 2em;
+			}
+			.feature-item {
+				flex: 1 1 300px; /* Flexbox item for responsive grid */
+				max-width: 350px;
+			}
+			.logo-container {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				gap: 3em;
+				margin-top: 2em;
+				flex-wrap: wrap;
+			}
+			.logo-container .image img {
+				max-height: 60px;
+				width: auto;
+			}
+		</style>
+	</head>
+	<body class="is-preload">
+
+		<header id="header">
+		<div class="top">
+                <div id="logo">
+                <span class="image avatar48"><img src="../images/MEDLogoBLK.jpg"subg alt="" /></span>
+					<h1 id="title">InterPython Workshop</h1>
+					<p>Astronomical Software Development</p>
+				</div>
+
+				<nav id="nav">
+					<ul>
+						<li><a href="#intro" id="top-link"><span class="icon fa-home">Welcome</span></a></li>
+						<li><a href="#one" id="facts-link"><span class="icon fa-bolt">Fast facts</span></a></li>
+						<li><a href="#two" id="overview-link"><span class="icon fa-list-alt">Workshop overview</span></a></li>
+						<li><a href="#three" id="team-link"><span class="icon fa-users">The volunteers</span></a></li>
+						<li><a href="#four" id="plans-link"><span class="icon fa-calendar">Future plans</span></a></li>
+					</ul>
+				</nav>
+			</div>
+			<div class="bottom">
+				</div>
+		</header>
+
+		<div id="main">
+
+			<section id="top" class="one dark cover">
+					
+	        </section>
+            <section id="about" class="">
+				<div class="container">
+					<header>
+						<h2>Welcome</h2>
+					</header>
+					<p>Modern astronomical research is tightly related to data analysis and writing software. 
+					While many university curriculums include introductory courses on programming, most astronomers never
+					get a proper training on tools and best practices that help to develop reliable, reusable and maintainable software.
+					</p>
+					<p>Intermediate Python for Astronomical Software Development (aka InterPython) workshop aims to mitigate
+					this problem. The InterPython workshop is being developed by the team of the TVS SC members, using the Carpentries 
+					<a href="https://carpentries-incubator.github.io/python-intermediate-development/">Intermediate Research Software Development workshop</a> 
+					materials as a foundation. Our goal is to create a short but comprehensive software development workshop that would be astronomy-specific
+					and at the same time would teach the core skill set necessary for the professional programming.
+					<p>The materials are intended for mainly self-mastering mode of learning with the instructors' help when needed.
+					The workshop can be taught as a whole or in parts, in an online or offline mode. </p>
+					<p>The workshop is being developed following <a href="https://carpentries.org/">the Carpentries</a> standards and the materials are available under the Creative Commons Attribution License. Anyone can share and adapt them to their own needs, and we encourage everyone to use these lessons for organizing your own workshops.</p>
+					<div class="logo-container">
+						<a href="#" class="image"><img src="images/logo%20tvs%20copy.png" alt="TVS Logo"/></a>
+						<a href="#" class="image"><img src="images/lsst-discovery-alliance-logo.svg" alt="LSST-DA Logo" /></a>
+						<a href="#" class="image"><img src="images/HSF.png" alt="HSF Logo"/></a>
+					</div>
+				</div>
+			</section>
+
+			<section id="one" class="two">
+				<div class="container">
+					<header>
+						<h2>Fast Facts</h2>
+					</header>
+					<div class="features-grid">
+						<div class="feature-item">
+							<span class="icon solid major fa-calendar"></span>
+							<h3>Dates</h3>
+							<p><b>1st Workshop:</b> Feb 05-09, 2024</p>
+							<p><b>Git Intro:</b> June 26, 2024</p>
+							<p><b>2nd Workshop:</b> July 01-04, 2024</p>
+						</div>
+						<div class="feature-item">
+							<span class="icon solid major fa-map-pin"></span>
+							<h3>Demographics</h3>
+							<p>For the 1st workshop, we had ~20 registered participants from the TVS SC community worldwide, with ~50% being undergraduate and PhD students.</p>
+						</div>
+						<div class="feature-item">
+							<span class="icon solid major fa-dollar-sign"></span>
+							<h3>Funding</h3>
+							<p>LSST DA grant of $7500 for workshop developers and instructors honorariums.</p>
+						</div>
+						<div class="feature-item">
+							<span class="icon solid major fa-handshake"></span>
+							<h3>Commitment</h3>
+							<p>To develop astronomical software workshop materials and organize at least two workshops in 2024-2025.</p>
+						</div>
+						<div class="feature-item">
+							<span class="icon solid major fa-link"></span>
+							<h3>The materials</h3>
+							<p><a href="https://shrra.github.io/python-intermediate-development/">InterPython workshop website</a></p>
+						</div>
+						<div class="feature-item">
+							<span class="icon solid major fa-pencil-alt"></span>
+							<h3>Contacts</h3>
+							<p>LSSTSC Slack server, or email: shr.razim at gmail.com</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section id="two" class="three">
+				<div class="container">
+					<header>
+						<h2>Workshop Overview</h2>
+					</header>
+					<p><b>The 1st InterPython workshop</b> took five 4-hours sessions, one session per day. In the first three days the lessons implied self-mastering the materials with a lot of practical exercises. In the last two days the attendees worked in groups of several people, mastering collaborative tools and best practices.</p>
+					<p><b>The 2nd InterPython workshop</b> has been rearranged to even out the learning load. The Git related materials have been extracted into a separate 1-day mini-workshop, and the collaborative exercises are now included in every session instead of being left for the last days.</p>
+					<p>The curriculum included the following topics:</p>
+					<ul>
+						<li>Virtual environments & Jupyter Lab IDE</li>
+						<li>Best practices for Jupyter</li>
+						<li>Basics of Git and GitHub</li>
+						<li>Python code style conventions & linters</li>
+						<li>Unit testing & Continuous integration</li>
+						<li>Debugging</li>
+						<li>Software requirements & architectures</li>
+						<li>Programming paradigms & Code review</li>
+						<li>Creating a Python package</li>
+						<li>Collaborative tools of GitHub</li>
+					</ul>
+				</div>
+			</section>
+
+			<section id="three" class="four">
+				<div class="container">
+					<header>
+						<h2>The workshop developers, instructors and helpers</h2>
+					</header>
+					<ul>
+						<li>Alex Razim, Ruder Boscovic Institute, Zagreb, Croatia </li>
+						<li>Markus Hundertmark, Astronomisches Rechen-Institut, Heidelberg, Germany </li>
+						<li>Riley Clarke, University of Delaware, USA</li>
+						<li>Angelica Kovacevic, University of Belgrade, Serbia</li>
+						<li>Konstantin Malanchev, Carnegie Mellon University/LINCC, Pittsburgh, USA</li>
+						<li>Rachel Street, Las Cumbres Observatory, USA</li>
+						<li>Jennifer Sobeck, The California Institute of Technology, USA,</li>
+						<li>Federica Bianco, University of Delaware, USA</li>
+						<li>Azalee Bostroem, University of Arizona, USA</li>
+						<li>Sid Chaini, University of Delaware, USA</li>
+					</ul>
+					<p>If you are interested in contributing to the development of materials or joining the instructors' team, feel free to contact us!</p>
+				</div>
+			</section>
+
+			<section id="four" class="">
+				<div class="container">
+					<header>
+						<h2>Future plans</h2>
+					</header>
+					<p>The next InterPython workshop is going to take place on June 1-4, 2024. Unlike the first workshop, the second one will be open for participation for the whole LSST community. We also plan to additionally improve the materials of the workshop, e.g. add episodes on using project templates and writing software documentation. </p>
+				</div>
+			</section>
+		</div>
+
+		<footer id="footer">
+			<div class="inner">
+				<ul class="menu">
+					<li>&copy; TVS SC 2024. All rights reserved.</li>
+				</ul>
+			</div>
+		</footer>
+
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+
+	</body>
+</html> -->
+
+
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>TVS Intermediate Python for Astronomical Software Development</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			/* Custom styles for improved layout */
+			.features-grid {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 2em;
+				justify-content: center;
+				text-align: center;
+				margin-top: 2em;
+			}
+			.feature-item {
+				flex: 1 1 300px;
+				max-width: 350px;
+			}
+			.logo-container {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				gap: 3em;
+				margin-top: 2em;
+				flex-wrap: wrap;
+			}
+			.logo-container .image img {
+				max-height: 60px;
+				width: auto;
+			}
+			/* Style for justifying paragraph text */
+			.justified-text {
+				text-align: justify;
+			}
+			/* Style for creating two-column lists */
+			.multi-column-list {
+				column-count: 2;
+				column-gap: 2em;
+				list-style-position: inside;
+			}
+			/* Responsive columns for smaller screens */
+			@media (max-width: 736px) {
+				.multi-column-list {
+					column-count: 1;
+				}
+			}
+		</style>
+	</head>
+	<body class="is-preload">
+
+		<header id="header">
+			<div class="top">
+				<div id="logo">
+					<span class="image avatar48"><img src="images/logo%20tvs%20copy.png" alt="TVS Logo" /></span>
+					<h1 id="title">InterPython Workshop</h1>
+					<p>Astronomical Software Development</p>
+				</div>
+
+				<nav id="nav">
+					<ul>
+						<li><a href="#intro" id="top-link"><span class="icon fa-home">Welcome</span></a></li>
+						<li><a href="#one" id="facts-link"><span class="icon fa-bolt">Fast facts</span></a></li>
+						<li><a href="#two" id="overview-link"><span class="icon fa-list-alt">Workshop overview</span></a></li>
+						<li><a href="#three" id="team-link"><span class="icon fa-users">The volunteers</span></a></li>
+						<li><a href="#four" id="plans-link"><span class="icon fa-calendar">Future plans</span></a></li>
+					</ul>
+				</nav>
+			</div>
+			<div class="bottom">
+				</div>
+		</header>
+
+		<div id="main">
+
+			<section id="intro" class="one dark cover">
+
+                </section>
+            <section id="about" class="">
+				<div class="container">
+					<header>
+						<h2>Intermediate Python for Astronomical Software Development</h2>
+					</header>
+					<p class="justified-text">Modern astronomical research is tightly related to data analysis and writing software. 
+					While many university curriculums include introductory courses on programming, most astronomers never
+					get a proper training on tools and best practices that help to develop reliable, reusable and maintainable software.
+					</p>
+					<p class="justified-text">Intermediate Python for Astronomical Software Development (aka InterPython) workshop aims to mitigate
+					this problem. It is being developed by the team of the TVS SC members, using the Carpentries 
+					<a href="https://carpentries-incubator.github.io/python-intermediate-development/">Intermediate Research Software Development workshop</a> 
+					materials as a foundation. Our goal is to create a short but comprehensive, astronomy-specific workshop that teaches the core skill set necessary for professional programming.
+					<p class="justified-text">The materials are intended for mainly self-mastering mode of learning with the instructors' help when needed.
+					The workshop can be taught as a whole or in parts, in an online or offline mode. </p>
+					<p class="justified-text">The workshop is being developed following <a href="https://carpentries.org/">the Carpentries</a> standards and the materials are available under the Creative Commons Attribution License. Anyone can share and adapt them, and we encourage everyone to use these lessons for organizing your own workshops.</p>
+					<div class="logo-container">
+						<a href="#" class="image"><img src="../interpython-workshop/images/logo tvs copy.png" alt="TVS Logo"/></a>
+						<a href="#" class="image"><img src="../interpython-workshop/images/lsst-discovery-alliance-logo.svg" alt="LSST-DA Logo" /></a>
+						<a href="#" class="image"><img src="../interpython-workshop/images/HSF.png" alt="HSF Logo"/></a>
+					</div>
+				</div>
+			</section>
+
+			<section id="one" class="two">
+				<div class="container">
+					<header>
+						<h2>Fast Facts</h2>
+					</header>
+					<div class="features-grid">
+						<div class="feature-item">
+							<span class="icon solid major fa-calendar"></span>
+							<h3>Dates</h3>
+							<h4>1st Workshop</h4><p>Feb 05-09, 2024</p>
+							<h4>Git Intro</h4><p>June 26, 2024</p>
+							<h4>2nd Workshop</h4><p>July 01-04, 2024</p>
+						</div>
+						<div class="feature-item">
+							<span class="icon solid major fa-map-pin"></span>
+							<h3>Demographics</h3>
+							<p>For the 1st workshop, we had ~20 registered participants from the TVS SC community worldwide, with ~50% being undergraduate and PhD students.</p>
+						</div>
+						<div class="feature-item">
+							<span class="icon solid major fa-dollar-sign"></span>
+							<h3>Funding</h3>
+							<p>LSST DA grant of $7500 for workshop developers and instructors honorariums.</p>
+						</div>
+						<div class="feature-item">
+							<span class="icon solid major fa-handshake"></span>
+							<h3>Commitment</h3>
+							<p>To develop astronomical software workshop materials and organize at least two workshops in 2024-2025.</p>
+						</div>
+						<div class="feature-item">
+							<span class="icon solid major fa-link"></span>
+							<h3>The Materials</h3>
+							<p><a href="https://shrra.github.io/python-intermediate-development/">InterPython Workshop Website</a></p>
+						</div>
+						<div class="feature-item">
+							<span class="icon solid major fa-pencil-alt"></span>
+							<h3>Contacts</h3>
+							<p>LSSTSC Slack server, or email: shr.razim at gmail.com</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section id="two" class="three">
+				<div class="container">
+					<header>
+						<h2>Workshop Overview</h2>
+					</header>
+					<p class="justified-text"><b>The 1st InterPython workshop</b> took five 4-hours sessions. For the first three days, the lessons implied self-mastering the materials with many practical exercises. In the last two days, the attendees worked in groups, mastering collaborative tools and best practices.</p>
+					<p class="justified-text"><b>The 2nd InterPython workshop</b> was rearranged to even out the learning load. The Git-related materials were extracted into a separate 1-day mini-workshop, and collaborative exercises are now included in every session.</p>
+					<p>The curriculum included the following topics:</p>
+					<ul class="multi-column-list">
+						<li>Virtual environments</li>
+						<li>Jupyter Lab IDE</li>
+						<li>Best practices for Jupyter</li>
+						<li>Basics of Git and GitHub</li>
+						<li>Python code style conventions</li>
+						<li>Verifying code style with linters</li>
+						<li>Unit testing</li>
+						<li>Continuous integration</li>
+						<li>Debugging</li>
+						<li>Software requirements</li>
+						<li>Software architectures</li>
+						<li>Programming paradigms</li>
+						<li>Code review</li>
+						<li>Creating a Python package</li>
+						<li>Collaborative tools of GitHub</li>
+					</ul>
+				</div>
+			</section>
+
+			<section id="three" class="four">
+				<div class="container">
+					<header>
+						<h2>The Workshop Developers, Instructors and Helpers</h2>
+					</header>
+					<ul class="list" style="text-align:center;">
+						<li>Alex Razim, Ruder Boscovic Institute, Croatia</li>
+						<li>Markus Hundertmark, ARI, Germany</li>
+						<li>Riley Clarke, University of Delaware, USA</li>
+						<li>Angelica Kovacevic, University of Belgrade, Serbia</li>
+						<li>Konstantin Malanchev, CMU/LINCC, USA</li>
+						<li>Rachel Street, Las Cumbres Observatory, USA</li>
+						<li>Jennifer Sobeck, Caltech, USA</li>
+						<li>Federica Bianco, University of Delaware, USA</li>
+						<li>Azalee Bostroem, University of Arizona, USA</li>
+						<li>Sid Chaini, University of Delaware, USA</li>
+					</ul>
+					<p style="text-align: center; margin-top: 2em;">If you are interested in contributing to the development of materials or joining the instructors' team, feel free to contact us!</p>
+				</div>
+			</section>
+
+			<section id="four" class="">
+				<div class="container">
+					<header>
+						<h2>Future Plans</h2>
+					</header>
+					<p class="justified-text">We are continuously improving the workshop materials. Future plans include adding episodes on using professional project templates and best practices for writing software documentation. We will continue to offer workshops to the LSST community and beyond.</p>
+				</div>
+			</section>
+		</div>
+
+		<footer id="footer">
+			<div class="inner">
+				<ul class="menu">
+					<li>&copy; TVS SC 2025. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</footer>
+
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

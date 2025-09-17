@@ -1,170 +1,164 @@
-<html>
-	<head>
-		<title>LSST-TVS members</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-        <script> 
-            $(function(){
-                $("#includedContent").load("subgroups_sidebar.html"); 
-            });
-        </script> 
-    </head> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>LSST-TVS Subgroups</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(function() {
+            $("#includedContent").load("subgroups_sidebar.html");
+        });
+    </script>
+</head>
 
-  	<body class="is-preload">
+<body class="is-preload">
+    <div id="wrapper">
+        <header id="header">
+            <h1><a href="https://lsst-tvssc.github.io/index.html#top">LSST TVS SC</a></h1>
+            <nav class="links">
+                <div id="nav"></div>
+            </nav>
+            <nav class="main">
+                <ul>
+                    <li class="search">
+                        <a class="fa-search" href="#search">Search</a>
+                        <form id="search" method="get" action="#">
+                            <input type="text" name="query" placeholder="Search" />
+                        </form>
+                    </li>
+                    <li class="menu">
+                        <a class="fa-bars" href="#menu">Menu</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+        <section id="menu">
+            <section>
+                <form class="search" method="get" action="#">
+                    <input type="text" name="query" placeholder="Search" />
+                </form>
+            </section>
 
-				<!-- Header -->
-					<!-- Header -->
-					<header id="header">
-						<h1><a href="index.html#top">LSST TVS SC</a></h1>
-						<nav class="links">
+            <section>
+                <ul>
+                    <li>
+                        <a href="index.html#top" id="top-link" class="skel-layers-ignoreHref">
+                            <i class="fas fa-home" aria-hidden="true"></i> Intro
+                        </a>
+                    </li>
+                    <li>
+                        <a href="members.html" id="members-link" class="skel-layers-ignoreHref">
+                            <i class="fas fa-user" aria-hidden="true"></i> Members and roles
+                        </a>
+                    </li>
+                    <li>
+                        <a href="subgroups.html" id="portfolio-link" class="skel-layers-ignoreHref">
+                            <i class="fas fa-th" aria-hidden="true"></i> Subgroups
+                        </a>
+                    </li>
+                    <li>
+                        <a href="taskForces.html" id="portfolio-link" class="skel-layers-ignoreHref">
+                            <i class="fas fa-th" aria-hidden="true"></i> Task Forces
+                        </a>
+                    </li>
+                    <li>
+                        <a href="lsst_sci_prep.html" id="portfolio-link" class="skel-layers-ignoreHref">
+                            <i class="fas fa-th" aria-hidden="true"></i> Preparatory Science Program
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://tvs.science.lsst.org/apply" id="application-link" class="skel-layers-ignoreHref" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-edit" aria-hidden="true"></i> Become a member
+                        </a>
+                    </li>
+                    <li>
+                        <a href="index.html#contact" id="contact-link" class="skel-layers-ignoreHref">
+                            <i class="fas fa-envelope" aria-hidden="true"></i> Contact us
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://drive.google.com/drive/folders/1PVaUMowhT3SWytLrL5VzNqYUK5RYRP3x?usp=sharing" id="members-link" class="skel-layers-ignoreHref" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-file" aria-hidden="true"></i> Documents
+                        </a>
+                    </li>
+                    <li>
+                        <a href="events.html" id="members-link" class="skel-layers-ignoreHref">
+                            <i class="fas fa-calendar" aria-hidden="true"></i> Events
+                        </a>
+                    </li>
+                    <li>
+                        <a href="meeting_notes.html" id="members-link" class="skel-layers-ignoreHref">
+                            <i class="fas fa-calendar" aria-hidden="true"></i> Meeting Notes
+                        </a>
+                    </li>
+                </ul>
+                <a href="#" class="button large fit">Log In</a>
+            </section>
+        </section> </div>
 
-						<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <div id="main">
+            <article class="post">
+                <header>
+                    <div class="title">
+                        <h2>Subgroups</h2>
+                        </div>
+                    <div class="meta">
+                        <time class="published" datetime="2020-06-01">June 2020</time>
+                        <a href="#" class="author"><span class="name"></span><img src="images/MEDLogoBLK.jpg" alt="MED Logo" /></a>
+                    </div>
+                </header>
 
-                            <div id="nav"></div>
+                <span class="image featured">
+                    <iframe style="width: 100%; height: 1000px; border: none;" src="TVSaffiliations/affiliations.html" title="TVS Subgroup Affiliations Diagram"></iframe>
+                </span>
+                
+                <footer>
+                    <ul class="stats">
+                        <li>The original version of this embedded page can be found <a href="TVSaffiliations/affiliations.html">here</a>.</li>
+                        <li><a href="https://tvs.science.lsst.org/?q=apply" target="_blank" class="button large">Apply to become a member!</a></li>
+                    </ul>
+                </footer>
+            </article>
+        </div>
 
-						</nav>
-							<!--
-							-->
-						<nav class="main">
-							<ul>
-								<li class="search">
-									<a class="fa-search" href="#search">Search</a>
-									<form id="search" method="get" action="#">
-										<input type="text" name="query" placeholder="Search" />
-									</form>
-								</li>
-								<li class="menu">
-									<a class="fa-bars" href="#menu">Menu</a>
-								</li>
-							</ul>
-						</nav>
-					</header>
+        <section id="sidebar">
+            <section id="intro">
+                <a href="#" class="logo"><img src="images/MEDLogoBLK.jpg" alt="MED Logo Black" /></a>
+                <header>
+                    <h2>Rubin LSST Transients and Variable Stars</h2>
+                    <p>Science Collaboration</p>
+                </header>
+            </section>
 
-				<!-- Menu -->
-					<section id="menu">
-                        <!-- Search -->
-							<section>
-								<form class="search" method="get" action="#">
-									<input type="text" name="query" placeholder="Search" />
-								</form>
-							</section>
+            <div id="includedContent"></div>
 
-						<!-- Search -->
-							<section>
-                               <ul>
-								<li><a href="index.html#top" id="top-link" class="skel-layers-ignoreHref"><span class="icon fa-home">Intro</span></a></li>
+            <section class="blurb">
+                <h2>About</h2>
+                <p>TVS is a <a href="https://lsst.org/">Vera C. Rubin Observatory</a> Legacy Survey of Space and Time <a href="https://www.lsstcorporation.org/science-collaborations">Science Collaboration </a> (SC). Our SC is a group that focuses on preparing to study the transient and variable sky with the revolutionary Legacy Survey of Space and Time (LSST).</p>
+                <ul class="actions">
+                    <li><a href="index.html" class="button">Learn More</a></li>
+                </ul>
+            </section>
 
-                                <li><a href="members.html" id="members-link" class="skel-layers-ignoreHref"><span class="icon fa-user">Members and roles</span></a></li>
+            <section id="footer">
+                <ul class="icons">
+                    <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+                    <li><a href="https://github.com/LSST-TVSSC" class="icon brands fa-github"><span class="label">Github</span></a></li>
+                    <li><a href="#contact" class="icon fa-envelope"><span class="label">Email</span></a></li>
+                </ul>
+                <p class="copyright">&copy; Untitled. Design: <a href="http://html5up.net">HTML5 UP</a>. Images: <a href="http://unsplash.com">Unsplash</a>.</p>
+            </section>
+        </section>
 
-								<li><a href="subgroups.html" id="portfolio-link" class="skel-layers-ignoreHref"><span class="icon fa-th">Subgroups</span></a></li>
+    </div>
 
-                                <li><a href="taskForces.html" id="portfolio-link" class="skel-layers-ignoreHref"><span class="icon fa-th">Task Forces</span></a></li>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
 
-																<li><a href="lsst_sci_prep.html" id="portfolio-link" class="skel-layers-ignoreHref"><span class="icon fa-th">Preparatory Science Program</span></a></li>
-
-																<li><a href="https://tvs.science.lsst.org/apply" id="application-link" class="skel-layers-ignoreHref"><span class="icon fa-edit">Become a member</span></a></li>
-
-                                <li><a href="index.html#contact" id="contact-link" class="skel-layers-ignoreHref"><span class="icon fa-envelope">Contact us</span></a></li>
-
-								<li><a href="https://drive.google.com/drive/folders/1PVaUMowhT3SWytLrL5VzNqYUK5RYRP3x?usp=sharing" id="members-link" class="skel-layers-ignoreHref"><span class="icon fa-file">Documents</span></a></li>
-
-								<li><a href="events.html" id="members-link" class="skel-layers-ignoreHref"><span class="icon fa-calendar">Events</span></a></li>
-								<li><a href="meeting_notes.html" id="members-link" class="skel-layers-ignoreHref"><span class="icon fa-calendar">Meeting Notes</span></a></li>
-
-								</ul>
-                                <a href="#" class="button large fit">Log In</a>
-
-							</section>
-
-						<!-- Links -->
-
-                </section>
-
-
-				<!-- Main -->
-					<div id="main">
-
-						<!-- Post -->
-							<article class="post">
-								<header>
-									<div class="title">
-										<h2>subgroups</h2>
-										<p></p>
-									</div>
-									<div class="meta">
-										<time class="published" datetime="2015-11-01">June 2020</time>
-										<a href="#" class="author"><span class="name"></span><img src="images/MEDLogoBLK.jpg" alt="" /></a>
-									</div>
-								</header>
-				        <span class="image featured">
-								<iframe width=100% height=1000px  src="TVSaffiliations/affiliations.html"></iframe> </span>
-								<footer>
-									<ul class="stats">
-						<p> the orginal version of the page embedded in this webpage can be found <a href="TVSaffiliations/affiliations.html">here</a>
-
-									</ul>
-								</footer>
-                                <footer>
-									<ul class="stats">
-						<p> 										<li><a href="https://tvs.science.lsst.org/?q=apply" target=_blank class="button large">Apply to become a member!</a></li>
-
-									</ul>
-								</footer>
-							</article>
-
-					</div>
-	<!-- Sidebar -->
-					<section id="sidebar">
-
-						<!-- Intro -->
-							<section id="intro">
-								<a href="#" class="logo"><img src="images/MEDLogoBLK.jpg" alt="" /></a>
-								<header>
-									<h2>Rubin LSST Transients and Variable Stars</h2>
-									<p>Science Collaboration</p>
-								</header>
-							</section>
-
-						<!-- Mini Posts -->
-
-						<!-- Subgroups side menu -->
-
-                        <div id="includedContent"></div>
-
-                        
-						<!-- About -->
-							<section class="blurb">
-								<h2>About</h2>
-                                <p>TVS is a <a href="https://lsst.org/">Vera C. Rubin Observatory</a> Legacy Survey of Space and Time <a href="https://www.lsstcorporation.org/science-collaborations">Science Collaboration </a> (SC). Our SC is a group focuses preparing to study the transient and variable sky with the revolutionary Legacy Survey of Space and Time  (LSST).</p>
-								<ul class="actions">
-									<li><a href="index.html" class="button">Learn More</a></li>
-								</ul>
-							</section>
-
-						<!-- Footer -->
-							<section id="footer">
-								<ul class="icons">
-									<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-							         <li><a href="https://github.com/LSST-TVSSC" class="icon brands fa-github"><span class="label">Github</span></a></li>
-                                    <li><a href="#contact" class="icon fa-envelope"><span class="label">Email</span></a></li>
-								</ul>
-								<p class="copyright">&copy; Untitled. Design: <a href="http://html5up.net">HTML5 UP</a>. Images: <a href="http://unsplash.com">Unsplash</a>.</p>
-							</section>
-
-					</section>
-			</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
+</body>
 </html>

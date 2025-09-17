@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+<!-- <!DOCTYPE HTML>
 <html>
 	<head>
 		<title>TVS Documents</title>
@@ -254,5 +254,339 @@
 		});
 	</script>
 
+</body>
+</html> -->
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>TVS Documents</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(function() {
+            $("#includedContent").load("subgroups_sidebar.html");
+        });
+    </script>
+    <style>
+        /* Table Styles */
+        .table-wrapper {
+            overflow-x: auto;
+        }
+        table.default {
+            width: 100%;
+            text-align: left;
+        }
+        table.default th {
+            background-color: #f0f4f7;
+        }
+        table.default td,
+        table.default th {
+            padding: 0.75em 1em;
+            border-bottom: 1px solid #ddd;
+            vertical-align: middle;
+        }
+        table.default tbody tr:hover {
+            background-color: #f9f9f9;
+        }
+        .icon-cell .fa, .icon-cell .fas { /* Support for fa and fas classes */
+            margin-right: 0.75em;
+            color: #666;
+            width: 1.2em;
+            text-align: center;
+        }
+        .placeholder-link {
+            color: #999;
+            font-style: italic;
+        }
+
+        /* Dark Mode Toggle Styles */
+        .theme-switch {
+		position: fixed;
+		top: -30px;
+		left: 950px;
+		z-index: 1000;
+		cursor: pointer;
+	}
+        #darkmode-toggle { display: none; }
+        .sun, .moon { width: 30px; height: 30px; }
+        .moon { display: none; }
+        #darkmode-toggle:checked ~ .theme-switch .sun { display: none; }
+        #darkmode-toggle:checked ~ .theme-switch .moon { display: block; }
+
+        /* Dark Mode Styles */
+        body.dark-mode { background-color: #242943; color: #e0e0e0; }
+        body.dark-mode #main .post { background-color: #2e3451; }
+        body.dark-mode table.default { background-color: #2e3451; }
+        body.dark-mode table.default th { background-color: #3d4469; border-color: #444; color: #e0e0e0;}
+        body.dark-mode table.default td { border-color: #444; color: #e0e0e0; }
+        body.dark-mode table.default tbody tr:hover { background-color: #353b5b; }
+        body.dark-mode .icon-cell .fa { color: #ccc; }
+        body.dark-mode a { color: #8ab4f8; }
+        body.dark-mode a:hover { color: #a2c6fa; }
+        body.dark-mode .placeholder-link { color: #777; }
+        body.dark-mode .title h2, body.dark-mode .title p { color: #e0e0e0; }
+    </style>
+</head>
+
+<body class="is-preload">
+    <div id="wrapper">
+        <header id="header">
+            <h1><a href="https://lsst-tvssc.github.io/index.html#top">LSST TVS SC</a></h1>
+            <nav class="links">
+                <div id="nav"></div>
+            </nav>
+            <nav class="main">
+                <ul>
+                    <li class="search">
+                        <a class="fa-search" href="#search">Search</a>
+                        <form id="search" method="get" action="#">
+                            <input type="text" name="query" placeholder="Search" />
+                        </form>
+                    </li>
+                    <li class="menu">
+                        <a class="fa-bars" href="#menu">Menu</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <section id="menu">
+            <section>
+                <form class="search" method="get" action="#">
+                    <input type="text" name="query" placeholder="Search" />
+                </form>
+            </section>
+            <section>
+                <ul>
+                    <li><a href="index.html#top"><i class="fas fa-home" aria-hidden="true"></i> Intro</a></li>
+                    <li><a href="members.html"><i class="fas fa-user" aria-hidden="true"></i> Members and roles</a></li>
+                    <li><a href="subgroups.html"><i class="fas fa-th" aria-hidden="true"></i> Subgroups</a></li>
+                    <li><a href="taskForces.html"><i class="fas fa-th" aria-hidden="true"></i> Task Forces</a></li>
+                    <li><a href="lsst_sci_prep.html"><i class="fas fa-th" aria-hidden="true"></i> Preparatory Science Program</a></li>
+                    <li><a href="https://tvs.science.lsst.org/apply" target="_blank" rel="noopener noreferrer"><i class="fas fa-edit" aria-hidden="true"></i> Become a member</a></li>
+                    <li><a href="index.html#contact"><i class="fas fa-envelope" aria-hidden="true"></i> Contact us</a></li>
+                    <li><a href="documents.html" class="active"><i class="fas fa-file" aria-hidden="true"></i> Documents</a></li>
+                    <li><a href="events.html"><i class="fas fa-calendar" aria-hidden="true"></i> Events</a></li>
+                    <li><a href="meeting_notes.html"><i class="fas fa-calendar" aria-hidden="true"></i> Meeting Notes</a></li>
+                </ul>
+                <a href="#" class="button large fit">Log In</a>
+            </section>
+        </section>
+
+        <div id="main">
+            <input type="checkbox" id="darkmode-toggle">
+            <label for="darkmode-toggle" class="theme-switch">
+                <svg class="sun" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="5" stroke="#1C274C" stroke-width="1.5" /><path d="M12 2V4" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round" /><path d="M12 20V22" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round" /><path d="M4 12L2 12" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round" /><path d="M22 12L20 12" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round" /><path d="M19.7778 4.22266L17.5558 6.25424" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round" /><path d="M4.22217 4.22266L6.44418 6.25424" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round" /><path d="M6.44434 17.5557L4.22211 19.7779" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round" /><path d="M19.7778 19.7773L17.5558 17.5551" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round" /></svg>
+                <svg class="moon" fill="#FFFFFF" viewBox="0 0 49.739 49.739" xmlns="http://www.w3.org/2000/svg"><path d="M25.068,48.889c-9.173,0-18.017-5.06-22.396-13.804C-3.373,23.008,1.164,8.467,13.003,1.979l2.061-1.129l-0.615,2.268 c-1.479,5.459-0.899,11.25,1.633,16.306c2.75,5.493,7.476,9.587,13.305,11.526c5.831,1.939,12.065,1.492,17.559-1.258v0 c0.25-0.125,0.492-0.258,0.734-0.391l2.061-1.13l-0.585,2.252c-1.863,6.873-6.577,12.639-12.933,15.822 C32.639,48.039,28.825,48.888,25.068,48.889z M12.002,4.936c-9.413,6.428-12.756,18.837-7.54,29.253 c5.678,11.34,19.522,15.945,30.864,10.268c5.154-2.582,9.136-7.012,11.181-12.357c-5.632,2.427-11.882,2.702-17.752,0.748 c-6.337-2.108-11.473-6.557-14.463-12.528C11.899,15.541,11.11,10.16,12.002,4.936z" /></svg>
+            </label>
+
+            <article class="post">
+                <header>
+                    <div class="title">
+                        <h2>Collaboration Documents</h2>
+                        <p>A central repository for key collaboration documents, policies, and charters.</p>
+                    </div>
+                </header>
+                
+                <div class="table-wrapper">
+                    <table class="default">
+                        <thead>
+                            <tr>
+                                <th>File Name</th>
+                                <th>Link</th>
+                                <th>File Size</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="icon-cell"><i class="fas fa-file-pdf"></i>TVS_publication_policy_v0.3.pdf</td>
+                                <td><a href="https://docs.google.com/document/d/1IgZkH1I_DE5TQQVuQmJl3aLnn6p6L4R9NK-JT0VVhRQ/edit?usp=drive_link" target="_blank">View Policy</a></td>
+                                <td>--</td>
+                            </tr>
+                            <tr>
+                                <td class="icon-cell"><i class="fas fa-file-pdf"></i>TVS_Getting_Started_Guide.pdf</td>
+                                <td><a href="#" class="placeholder-link">[Link Here]</a></td>
+                                <td>136 KB</td>
+                            </tr>
+                            <tr>
+                                <td class="icon-cell"><i class="fas fa-file-word"></i>TVS Code of Conduct and charter acknowledgement</td>
+                                <td><a href="#" class="placeholder-link">[Link Here]</a></td>
+                                <td>--</td>
+                            </tr>
+                            <tr>
+                                <td class="icon-cell"><i class="fas fa-file-image"></i>TVS-charter.jpeg</td>
+                                <td><a href="#" class="placeholder-link">[Link Here]</a></td>
+                                <td>17 KB</td>
+                            </tr>
+                            <tr>
+                                <td class="icon-cell"><i class="fas fa-file-image"></i>TVS-charter.png</td>
+                                <td><a href="#" class="placeholder-link">[Link Here]</a></td>
+                                <td>122 KB</td>
+                            </tr>
+                            <tr>
+                                <td class="icon-cell"><i class="fas fa-file-image"></i>TVS-charter.png</td>
+                                <td><a href="#" class="placeholder-link">[Link Here]</a></td>
+                                <td>127 KB</td>
+                            </tr>
+                            <tr>
+                                <td class="icon-cell"><i class="fas fa-file-pdf"></i>TVS-charter.pdf</td>
+                                <td><a href="#" class="placeholder-link">[Link Here]</a></td>
+                                <td>97 KB</td>
+                            </tr>
+                            <tr>
+                                <td class="icon-cell"><i class="fas fa-file-code"></i>TVS-charter.html</td>
+                                <td><a href="#" class="placeholder-link">[Link Here]</a></td>
+                                <td>3 KB</td>
+                            </tr>
+                            <tr>
+                                <td class="icon-cell"><i class="fas fa-file-word"></i>TVS Charter Supplementary Document</td>
+                                <td><a href="https://docs.google.com/document/d/1AdUta9XRbBYtqs4aB8F-NC4yh207ylgt8s4LbldCDzw/edit?usp=drive_link" target="_blank">View Document</a></td>
+                                <td>2 KB</td>
+                            </tr>
+                            <tr>
+                                <td class="icon-cell"><i class="fas fa-file-word"></i>TVS Charter</td>
+                                <td><a href="https://docs.google.com/document/d/1r4C1ACUr3JgIOoKA0_ByYSlwiPmYYgFhiK_JIHgyrs0/edit?usp=sharing" target="_blank">View Charter</a></td>
+                                <td>15 KB</td>
+                            </tr>
+                            <tr>
+                                <td class="icon-cell"><i class="fas fa-file-excel"></i>TVS Charter</td>
+                                <td><a href="#" class="placeholder-link">[Link Here]</a></td>
+                                <td>3 KB</td>
+                            </tr>
+                            <tr>
+                                <td class="icon-cell"><i class="fas fa-question-circle"></i>TVS Call to action</td>
+                                <td><a href="#" class="placeholder-link">[Link Here]</a></td>
+                                <td>--</td>
+                            </tr>
+                            <tr>
+                                <td class="icon-cell"><i class="fas fa-file-excel"></i>TVS builder status nomination (Responses)</td>
+                                <td><a href="#" class="placeholder-link">[Link Here]</a></td>
+                                <td>2 KB</td>
+                            </tr>
+                            <tr>
+                                <td class="icon-cell"><i class="fas fa-question-circle"></i>TVS builder status nomination</td>
+                                <td><a href="https://docs.google.com/forms/d/e/1FAIpQLSdWOQiiw34kG4JZfliDkqgN6ElkOex-Yez1-rUjNVKZYSAz6A/viewform?usp=sharing" target="_blank">Open Form</a></td>
+                                <td>41 KB</td>
+                            </tr>
+                            <tr>
+                                <td class="icon-cell"><i class="fas fa-question-circle"></i>TVS authorship appeal request</td>
+                                <td><a href="https://docs.google.com/forms/d/e/1FAIpQLSd47vgmgR4Riad_-poGNXkb6gtJDl1kd-7i_S8JwknTznEnDA/viewform?usp=sharing" target="_blank">Open Form</a></td>
+                                <td>43 KB</td>
+                            </tr>
+                             <tr>
+                                <td class="icon-cell"><i class="fas fa-file-word"></i>The LSST Transient and Variable Stars...</td>
+                                <td><a href="#" class="placeholder-link">[Link Here]</a></td>
+                                <td>77 KB</td>
+                            </tr>
+                            <tr>
+                                <td class="icon-cell"><i class="fas fa-file-word"></i>Schedule A for The LSST Transient and Variable...</td>
+                                <td><a href="#" class="placeholder-link">[Link Here]</a></td>
+                                <td>--</td>
+                            </tr>
+                            <tr>
+                                <td class="icon-cell"><i class="fas fa-file-excel"></i>PlayRAG ICA Renewal</td>
+                                <td><a href="#" class="placeholder-link">[Link Here]</a></td>
+                                <td>--</td>
+                            </tr>
+                            <tr>
+                                <td class="icon-cell"><i class="fas fa-file-excel"></i>PlayRAG ICA</td>
+                                <td><a href="#" class="placeholder-link">[Link Here]</a></td>
+                                <td>--</td>
+                            </tr>
+                            <tr>
+                                <td class="icon-cell"><i class="fas fa-file-word"></i>OLD TVS Charter</td>
+                                <td><a href="#" class="placeholder-link">[Link Here]</a></td>
+                                <td>172 KB</td>
+                            </tr>
+                            <tr>
+                                <td class="icon-cell"><i class="fas fa-file-word"></i>LSST TVS Code of Conduct</td>
+                                <td><a href="https://docs.google.com/document/d/1qPdo-bK7LHmd6_7iZh1oTDfVi0nJAVa7qFx2GKMlsis/edit?usp=drive_link" target="_blank">View Document</a></td>
+                                <td>36 KB</td>
+                            </tr>
+                            <tr>
+                                <td class="icon-cell"><i class="fas fa-file-pdf"></i>Diversity_Equality_Inclusion_2020June03.pdf</td>
+                                <td><a href="#" class="placeholder-link">[Link Here]</a></td>
+                                <td>4 MB</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </article>
+        </div>
+
+        <section id="sidebar">
+            <section id="intro">
+                <a href="#" class="logo"><img src="images/MEDLogoBLK.jpg" alt="MED Logo" /></a>
+                <header>
+                    <h2>Rubin LSST Transients and Variable Stars</h2>
+                    <p>Science Collaboration</p>
+                </header>
+            </section>
+            <div id="includedContent"></div> <section class="blurb">
+                <h2>About</h2>
+                <p>TVS is a <a href="https://rubinobservatory.org">Vera C. Rubin Observatory</a> Legacy Survey of Space and Time <a href="https://www.lsstcorporation.org/science-collaborations">Science Collaboration</a> (SC). Our SC is a group focused on preparing to study the transient and variable sky with the revolutionary Legacy Survey of Space and Time (LSST).</p>
+                <ul class="actions">
+                    <li><a href="#" class="button">Learn More</a></li>
+                </ul>
+            </section>
+            <section id="footer">
+                <ul class="icons">
+                    <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+                    <li><a href="https://github.com/LSST-TVSSC" class="icon brands fa-github"><span class="label">Github</span></a></li>
+                    <li><a href="#contact" class="icon fa-envelope"><span class="label">Email</span></a></li>
+                </ul>
+                <p class="copyright">&copy; Design: <a href="http://html5up.net">HTML5 UP</a>.</p>
+            </section>
+        </section>
+    </div>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Dark Mode Toggle Logic
+        const toggle = document.getElementById('darkmode-toggle');
+        const body = document.body;
+        
+        // Function to set theme based on preference
+        function setTheme(theme) {
+            if (theme === 'dark') {
+                body.classList.add('dark-mode');
+                toggle.checked = true;
+            } else {
+                body.classList.remove('dark-mode');
+                toggle.checked = false;
+            }
+        }
+
+        // Event listener for the toggle
+        toggle.addEventListener('change', function() {
+            if (this.checked) {
+                body.classList.add('dark-mode');
+                localStorage.setItem('theme', 'dark'); // Save preference
+            } else {
+                body.classList.remove('dark-mode');
+                localStorage.setItem('theme', 'light'); // Save preference
+            }
+        });
+
+        // Check for saved theme preference on page load
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            setTheme(savedTheme);
+        } else {
+            // Optional: check for system preference if no saved theme
+            const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (prefersDark) {
+                setTheme('dark');
+            }
+        }
+    </script>
 </body>
 </html>
