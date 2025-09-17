@@ -10,6 +10,47 @@
                 $("#includedContent").load("subgroups_sidebar.html"); 
             });
         </script> 
+		<style>
+ /* 1. Defines the responsive grid container */
+.grid-container2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Creates responsive columns */
+    gap: 1.5em; /* Defines the space between the cards */
+    margin-bottom: 2em; /* Space below the entire grid section */
+}
+
+/* 2. Styles each individual card */
+.task-force-card {
+    border: 1px solid #e0e0e0; /* Adds the light border */
+    padding: 1.5em;            /* Adds internal spacing (padding) */
+    text-align: left;          /* Ensures text is NOT justified */
+}
+
+/* 3. Styles the title inside each card */
+.task-force-card h3 a {
+    color: #008080; /* A teal color similar to your screenshot */
+    text-decoration: none;
+    border-bottom: none;
+    font-weight: 600;
+}
+
+/* 4. Styles the coordinator's name */
+.task-force-card .coordinator {
+    font-style: italic;
+    color: #888;
+    margin-top: 0.25em;
+    margin-bottom: 1em;
+}
+
+/* 5. General text and list styling within the card */
+.task-force-card p, .task-force-card ol {
+    margin-bottom: 1em;
+}
+
+.task-force-card ol {
+    padding-left: 1.2em; /* Indents the numbered lists */
+}
+</style>
 	</head>
 
 	<body class="is-preload">
@@ -100,150 +141,100 @@
 
 				<!--task forces -->
                 <article class="post">
-                    <section id="taskForces" class="three">
-						<div class="container">
+    <section id="taskForces" class="three">
+        <div class="container">
+            <header>
+                <h2>Task Forces</h2>
+            </header>
 
-							<header>
-								<h2>Task Forces</h2>
-							</header>
+            <h2>2021-2022 TVS task forces</h2>
+            <div class="grid-container2">
+                <div class="task-force-card">
+                    <h3><a href="taskForces/survey_strategy_task_force.html">Survey Strategy Task Force</a></h3>
+                    <p class="coordinator">Coordinator: Rachel Street</p>
+                    <p>This task force coordinates work by TVS members relating to all aspects of survey strategy, in particular working on papers for the planned special edition publication of Cadence Notes. The group also coordinates with similar task forces from other Science Collaborations with overlapping science interests.</p>
+                </div>
+                <div class="task-force-card">
+                    <h3><a href="taskForces/dp0_task_force.html">Data Preview 0 Task Force</a></h3>
+                    <p class="coordinator">Coordinator: Sara Bonito</p>
+                    <p>This task force is working on a range of projects undertaken for Data Preview 0, and serves as a forum for members to share their progress and troubleshoot issues. In the course of these projects, members will evaluate the functionality of the Rubin Science Platform for their science.</p>
+                </div>
+                <div class="task-force-card">
+                    <h3><a href="taskForces/crowded_field_task_force.html">Crowded Fields Photometry Task Force</a></h3>
+                    <p class="coordinator">Coordinator: Massimo Dall'Ora</p>
+                    <p>This task force will continue the productive collaboration started in previous years. It will continue to evaluate the quality of photometry that can be produced from Rubin data products in crowded star fields, and its application for variable star science. We suggest this task also focuses on writing a comprehensive report of their activities up to now.</p>
+                </div>
+                <div class="task-force-card">
+                    <h3><a href="taskForces/commissioning_task_force.html">Commissioning Task Force</a></h3>
+                    <p class="coordinator">Coordinator: Markus Rabus</p>
+                    <p>This task force will liaise with the Rubin commissioning staff, continuing to provide scientific input on activities and observations that benefit TVS science in the commissioning phase of the project.</p>
+                </div>
+                <div class="task-force-card">
+                    <h3><a href="taskForces/software_task_force.html">Software Task Force</a></h3>
+                    <p class="coordinator">Coordinator: Alex Razim</p>
+                    <p>All of the science that TVS will do during LSST will depend on having access to software tools capable of handling LSST data, the rate at which it is delivered, and interfacing with key services in the Rubin "ecosystem" such as alert brokers and the Rubin Science Platform. Rubin’s recent call to solicit international in-kind contributions has resulted in a number of teams committing to providing software development effort to be guided by TVS towards software that will benefit our members. This task force will help to conceive and design software that needs to created from scratch or adapted for Rubin, and begin to work with international teams to oversee the development of that software.</p>
+                </div>
+            </div>
 
-							                    <h2>2021-2022 TVS task forces</h2>
-							                    <div class="grid-container2">
+            <h2>2019-2020 TVS task forces</h2>
+            <div class="grid-container2">
+                <div class="task-force-card">
+                    <h3><a href="taskForces/maf_task_force_work_plan.html">MAF TF</a></h3>
+                    <p>Metrics (MAFs) were not generally available with the submitted TVS white papers and without them the cadences cannot be evaluated. This means the requested cadences may actually not be simulated, unless a MAF is provided or easily generated by the project members. This TF should:</p>
+                    <ol>
+                        <li>Learn the MAF</li>
+                        <li>Review the TVS White Paper submissions for cadence proposals</li>
+                        <li>Design and code MAFs for all TVS submissions</li>
+                        <li>Create TVS specific (video) tutorials for MAF</li>
+                    </ol>
+                </div>
+                <div class="task-force-card">
+                    <h3><a href="taskForces/lsp_task_force_work_plan.html">Science Platform Evaluation Through "Stack Club" involvement TF</a></h3>
+                    <p>Members will get involved in the LSST “stack club” and this gain access to the LSST Science Platform. This TF should:</p>
+                    <ol>
+                        <li>Gain familiarity with the LSST Science Platform and share it with the rest of TVS,</li>
+                        <li>Understand what TVS users need from the Science Platform and evaluate whether the current design will provide it.</li>
+                        <li>Report on Stack Club by a member of the club (possibly also member of TVS)</li>
+                    </ol>
+                </div>
+                <div class="task-force-card">
+                    <h3>Deep and accurate PSF photometry in crowded fields, and search for variable stars TF</h3>
+                    <p>This TF will follow the success of the deblending TF that analyzed DECAM very crowded fields with DAOPhot with the aim to refine parameters in the LSST Stack to optimize crowded field photometry for variable stars and stacks. This TF should:</p>
+                    <ol>
+                        <li>Perform a full test of the DECam Bulge dataset (2013A-0721) with Scarlet</li>
+                        <li>Publish the results of our tests in a refereed paper</li>
+                        <li>Publish any scientific result which could arise from our analysis.</li>
+                    </ol>
+                </div>
+                <div class="task-force-card">
+                    <h3>Commissioning TF</h3>
+                    <p>The LSST commissioning is planned to start in a year and LSST Project has solicited the involvement of the SCs. This TF should:</p>
+                    <ol>
+                        <li>Design potential on-sky observations which could be done during the commissioning phase in order to test the feasibility of our science cases within TVS.</li>
+                        <li>Define minimum requirements useful for the proposed (respective) science cases.</li>
+                        <li>Maybe even design tools/metrics to test feasibility.</li>
+                    </ol>
+                </div>
+            </div>
 
-							                        <div>
-							                            <h3><a href= "taskForces/survey_strategy_task_force.html" >Survey Strategy Task Force </a></h3>
-																					<p>Coordinator: Rachel Street</p>
-										    							<p>This task force coordinates work by TVS members relating to all aspects of survey strategy,
-																				in particular working on papers for the planned special edition publication of Cadence Notes.
-																				The group also coordinates with similar task forces from other Science Collaborations with
-																				overlapping science interests. </p>
-							                       </div>
-							                          <div>
-							                            <h3><a href= "taskForces/dp0_task_force.html" >Data Preview 0 Task Force</a></h3>
-																					<p>Coordinator: Sara Bonito</p>
-																					<p>This task force is working on a range of projects undertaken for Data Preview 0,
-																						and serves as a forum for members to share their progress and troubleshoot issues.
-																						In the course of these projects, members will evaluate the functionality of the Rubin
-																						Science Platform for their science. </p>
-							                       </div>
-							                          <div>
-							                            <h3><a href= "taskForces/crowded_field_task_force.html">Crowded Fields Photometry Task Force</a></h3>
-																					<p>Coordinator: Massimo Dall'Ora</p>
-							                            <p>
-																					This task force will continue the productive collaboration started in previous years.
-																					It will continue to evaluate the quality of photometry that can be produced from Rubin data
-																					products in crowded star fields, and its application for variable star science. We suggest this
-																					task also focuses on writing a comprehensive report of their activities up to now.
-																					</p>
-							                       </div>
-							                          <div>
-							                            <h3><a href= "taskForces/commissioning_task_force.html">Commissioning Task Force</a></h3>
-							                            							<p>Coordinator: Markus Rabus</p>
-																					<p>
-																						This task force will liaise with the Rubin commissioning staff, continuing to provide
-																						scientific input on activities and observations that benefit TVS science in the
-																						commissioning phase of the project. </p>
-							                       </div>
-							                          <div>
-							                            <h3><a href= "taskForces/software_task_force.html">Software Task Force</a></h3>
-																					<p>Coordinator: Alex Razim</p>
-																					<p>
-																						All of the science that TVS will do during LSST will depend on having access to software tools
-																						capable of handling LSST data, the rate at which it is delivered, and interfacing with key services
-																						in the Rubin "ecosystem" such as alert brokers and the Rubin Science Platform.
-																						Rubin’s recent call to solicit international in-kind contributions has resulted in a number of teams
-																						committing to providing software development effort to be guided by TVS towards software that will
-																						benefit our members. This task force will help to conceive and design software that needs to created
-																						from scratch or adapted for Rubin, and begin to work with international teams to oversee the development
-																						of that software.
-							                            </p>
-							                       </div>
-							                    </div>
-
-                    <h2>2019-2020 TVS task forces</h2>
-                    <div class="grid-container2">
-
-                        <div>
-                            <h3><a href= "taskForces/maf_task_force_work_plan.html" > MAF TF </a></h3>
-			    <p>
-      				Metrics (MAFs) were not generally available with the submitted TVS white papers and without them the cadences cannot be evaluated. This means the requested cadences may actually not be simulated, unless a MAF is provided or easily generated by the project members. This TF should </p>
-                            <p>
-                                1 - Learn the MAF</p>
-                            <p>
-                                2 - Review the TVS White Paper submissions for cadence proposals</p>
-                            <p>
-                                3 - Design and code MAFs for all TVS submissions</p>
-                            <p>
-                                4 - Create TVS specific (video) tutorials for MAF
-                       </div>
-                          <div>
-                            <h3><a href= "taskForces/lsp_task_force_work_plan.html">Science Platform Evaluation Through "Stack Club" involvement TF</a></h3><p>
-                            Members will get involved in the LSST “stack club” and this gain access to the LSST Science Platform. This TF should:
-
-                            <p>
-                                1 - Gain familiarity with the LSST Science Platform and share it with the rest of TVS,
-</p>
-                            <p>
-                                2 - Understand what TVS users need from the Science Platform and evaluate whether the current design will provide it.</p>
-                            <p>
-                                3 - Report on Stack Club by a member of the club (possibly also member of TVS)</p>
-                       </div>
-                          <div>
-                            <h3>Deep and accurate PSF photometry in crowded fields, and search for variable stars TF
-                              </h3><p>
-                            This TF will follow the success of the deblending TF that analyzed DECAM very crowded fields with DAOPhot with the aim to refine parameters in the LSST Stack to optimize crowded field photometry for variable stars and stacks. This TF should:
-
-                            <p>
-                                1 - Perform a full test of the DECam Bulge dataset (2013A-0721) with Scarlet</p>
-                            <p>
-                                2 - Publish the results of our tests in a refereed paper</p>
-                            <p>
-                                3 - Publish any scientific result which could arise from our analysis.</p>
-                            <p>
-                       </div>
-                          <div>
-                            <h3>Commissioning TF
-                              </h3><p>
-                            The LSST commissioning is planned to start in a year and LSST Project has solicited the involvement of the SCs. This TF should:
-                              </p>
-                            <p>
-                                1 - Design potential on-sky observations which could be done during the commissioning phase in order to test the feasibility of our science cases within TVS.
-                              </p>
-                            <p>
-                                2 - Define minimum requirements useful for the proposed (respective) science cases.
-                              </p>
-                            <p>
-                                3 - Maybe even design tools/metrics to test feasibility.
-                              </p>
-
-                       </div>
-                    </div>
-
-
-                <h2>2018 TVS task forces</h2>
-                    <div class="grid-container2">
-
-                        <div>
-                            <h3><a href="taskForces/broker_task_force_work_plan.html">Characterize a community-broker interface functionality </a></h3>
-                            <br>
-                            Spokesperson: <a href="mailto:markus.rabus@gmail.com">Markus Rabus, PUC, Chile</a>
-                        </div>
-                         <div>
-                             <h3><a href="taskForces/cfp_task_force_work_plan.html">Crowded Field Photometry</a></h3>
-                                                         <br>
-
-                        Spokesperson: <a href="mailto:kmhambleton@gmail.com">Kelly Hambleton</a>
-                        </div>
-
-                        <div>
-                            <h3><a href="taskForces/MS_DDF_task_force_work_plan.html"> Deep-drilling fields and mini-surveys proposals planning </a></h3>
-                            <br>
-                            Spokesperson: <a href="mailto:sbonito@astropa.unipa.it">Sara Bonito, INAF, Italy</a>
-                        </div>
-
-                        </div>
-                    </section>
-                </article>
+            <h2>2018 TVS task forces</h2>
+            <div class="grid-container2">
+                <div class="task-force-card">
+                    <h3><a href="taskForces/broker_task_force_work_plan.html">Characterize a community-broker interface functionality</a></h3>
+                    <p>Spokesperson: <a href="mailto:markus.rabus@gmail.com">Markus Rabus, PUC, Chile</a></p>
+                </div>
+                <div class="task-force-card">
+                    <h3><a href="taskForces/cfp_task_force_work_plan.html">Crowded Field Photometry</a></h3>
+                    <p>Spokesperson: <a href="mailto:kmhambleton@gmail.com">Kelly Hambleton</a></p>
+                </div>
+                <div class="task-force-card">
+                    <h3><a href="taskForces/MS_DDF_task_force_work_plan.html">Deep-drilling fields and mini-surveys proposals planning</a></h3>
+                    <p>Spokesperson: <a href="mailto:sbonito@astropa.unipa.it">Sara Bonito, INAF, Italy</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+</article>
 
 
 

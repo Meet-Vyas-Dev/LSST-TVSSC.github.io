@@ -10,6 +10,46 @@
                 $("#includedContent").load("subgroups_sidebar.html"); 
             });
         </script> 
+		<style>
+			/* Add this to your main CSS file or a <style> tag in the <head> */
+			.grid-container-chairs {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+				gap: 2em;
+				margin-bottom: 2em;
+			}
+			.chair-card {
+				text-align: center;
+			}
+			.chair-card a {
+				border-bottom: none;
+				text-decoration: none;
+			}
+			.chair-card .avatar {
+				border-radius: 50%;
+				margin-bottom: 1em;
+				width: 160px;
+				height: 160px;
+				object-fit: cover;
+			}
+			.chair-info {
+				display: block;
+				margin-top: 1em;
+			}
+			.chair-name {
+				font-size: 1.2em;
+				font-weight: bold;
+				display: block;
+			}
+			.chair-affiliation {
+				font-size: 0.9em;
+				font-style: italic;
+				color: #888;
+				display: block;
+				line-height: 1.4;
+			}
+		</style>
+
 	</head>
 <body class="is-preload">
     <div id="wrapper">
@@ -104,54 +144,57 @@
 
 						<!-- Post -->
 							<article class="post">
-								<header>
-									<div class="title">
-										<h2>our members</h2>
-										<p></p>
-									</div>
-									<div class="meta">
-										<time class="published" datetime="2015-11-01">June 2020</time>
-										<a href="#" class="author"><span class="name"></span><img src="images/MEDLogoBLK.jpg" alt="" /></a>
-									</div>
-                                </header>
-                                <span class="image featured">
+    <header>
+        <div class="title">
+            <h2>Our Members</h2>
+        </div>
+        <div class="meta">
+            <time class="published" datetime="2020-06-01">June 2020</time>
+            <a href="#" class="author"><span class="name"></span><img src="images/MEDLogoBLK.jpg" alt="MED Logo" /></a>
+        </div>
+    </header>
 
-                                   <iframe frameborder="0" style="width:100%;height:521px;" src="https://viewer.diagrams.net/?highlight=0000ff&edit=_blank&layers=1&nav=1&title=TVS%20charter#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1QzloGlOFGQQTExbBKoypXkJCRZMN_nHS%26export%3Ddownload"
-                                           width="640" height="480"></iframe>
+    <span class="image featured">
+        <iframe style="width:100%; height:521px; border:none;" title="TVS Organizational Chart" src="https://viewer.diagrams.net/?highlight=0000ff&edit=_blank&layers=1&nav=1&title=TVS%20charter#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1QzloGlOFGQQTExbBKoypXkJCRZMN_nHS%26export%3Ddownload"></iframe>
+    </span>
 
-				                </span>
-								<p> Our Science Collaboration includes over 520 members as of December 2023, spanning 5 continents. The diagram above shows the organizational structure of TVS. Contact our chairs for more information! </p>
+    <p>Our Science Collaboration includes over 520 members as of December 2023, spanning 5 continents. The diagram above shows the organizational structure of TVS. Contact our chairs for more information!</p>
 
+    <ul class="actions">
+        <li><a href="https://tvs.science.lsst.org/?q=apply" target="_blank" rel="noopener noreferrer" class="button large">Apply to become a member!</a></li>
+    </ul>
 
-                            <ul class="actions" >
-										<li><a href="https://tvs.science.lsst.org/?q=apply" target=_blank class="button large">Apply to become a member!</a></li>
-                                    </ul>
+    <section class="post-content">
+        <h2>Co-Chairs</h2>
+        <div class="grid-container-chairs">
+            <div class="chair-card">
+                <a href="https://www.igorandreoni.com" target="_blank" rel="noopener noreferrer">
+                    <img class="avatar" src="images/igor.jpg" alt="Avatar of Igor Andreoni">
+                    <span class="chair-info">
+                        <span class="chair-name">Igor Andreoni</span>
+                        <span class="chair-affiliation">University of North Carolina at Chapel Hill</span>
+                    </span>
+                </a>
+            </div>
+            <div class="chair-card">
+                <a href="http://www.astropa.inaf.it/en/personal-pages/sara-bonito/" target="_blank" rel="noopener noreferrer">
+                    <img class="avatar" src="images/sara.jpg" alt="Avatar of Sara Bonito">
+                    <span class="chair-info">
+                        <span class="chair-name">Sara Bonito</span>
+                        <span class="chair-affiliation">INAF, Osservatorio Astronomico di Palermo</span>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </section>
 
-                                <div article>
-
-                                    <h2>co-chairs</h2>
-
-                                <div class="grid-container-chairs">
-                                    <div >
-                                    <a href="https://www.igorandreoni.com">Igor Andreoni
-                                    <br><font size="-0.5">University of North Carolina at Chapel Hill
-                                    </font><br>
-
-                                <img class="avatar" src="images/igor.jpg" alt="Avatar" width="160"></a>
-                                    <br>
-                                    <a href="http://www.astropa.inaf.it/en/personal-pages/sara-bonito/">
-                                    Sara Bonito <br> <font size="-0.5">INAF<br>Osservatorio Astronomico di Palermo</font><br>
-
-
-                                <img class="avatar" src="images/sara.jpg" alt="Avatar" width=160></a>
-                                   </div>
-                                    <span class="image featured"><h2>members roster</h2>
-								<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTs0wS3762nrlIzWHvJYuhBPMo96O0aksnFfd1FAxLOL9k2WPj1DUyB2TsYS3BqsEieElQYGPRjbh-_/pubhtml?gid=835096946&amp;single=true&amp;widget=true&amp;headers=false" width=100% height=500>></iframe>
-                                </span>
-                                    </div>
-
-                                </div>
-							</article>
+    <section class="post-content">
+        <h2>Members Roster</h2>
+        <div class="iframe-container">
+            <iframe title="TVS Members Roster Spreadsheet" style="width:100%; height:500px; border:none;" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTs0wS3762nrlIzWHvJYuhBPMo96O0aksnFfd1FAxLOL9k2WPjDUyB2TsYS3BqsEieElQYGPRjbh-_/pubhtml?gid=835096946&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+        </div>
+    </section>
+</article>
 
 					</div>
 	<!-- Sidebar -->
