@@ -3,41 +3,23 @@
 	<head>
 		<title>LSST-TVS</title>
 		<meta charset="utf-8" />
-		
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-	</head>
-<body>   
-    	<!-- Header -->
-			<div id="header">
+		</head>
+<body>
+    	<div id="header">
 
 				<div class="top">
 
-					<!-- Logo -->
-						<div id="logo">
-							<span class="image avatar48"><img src="images/MEDLogoBLK.jpg"subg alt="" /></span>
-							<h1 id="title"> Transients and Variable Stars </h1>
-							<p>LSST Science Collaboration</p>
+					<div id="logo">
+                            <a href="https://lsst-tvssc.github.io/">
+							    <span class="image avatar48"><img src="images/MEDLogoBLK.jpg" alt="TVS Logo" /></span>
+							    <h1 id="title"> Transients and Variable Stars </h1>
+							    <p>LSST Science Collaboration</p>
+                            </a>
 						</div>
 
-					<!-- Nav -->
-						<nav id="nav">
-							<!--
-
-								Prologue's nav expects links in one of two formats:
-
-								1. Hash link (scrolls to a different section within the page)
-
-								   <li><a href="#foobar" id="foobar-link" class="icon fa-whatever-icon-you-want skel-layers-ignoreHref"><span class="label">Foobar</span></a></li>
-
-								2. Standard link (sends the user to another page/site)
-
-								   <li><a href="http://foobar.tld" id="foobar-link" class="icon fa-whatever-icon-you-want"><span class="label">Foobar</span></a></li>
-
-							-->
+					<nav id="nav">
 							<ul>
 								<li><a href="#topic" id="topic-link" class="skel-layers-ignoreHref"><span class="icon fa-th">Topic</span></a></li>
 								<li><a href="#membership" id="membership-link" class="skel-layers-ignoreHref"><span class="icon fa-user">Membership</span></a></li>
@@ -50,104 +32,95 @@
 				</div>
 			</div>
 
-		<!-- Main -->
-			<div id="main">
+		<div id="main">
 
-				<!-- Intro -->
-					<section id="top" class="one dark cover">
+				<section id="top" class="one dark cover">
 						<div class="container">
 
 							<header>
-								<h2 class="alt">Magnetically Active Stars Subgroup</h2>
+								<h2 class="alt">{Subgroup Name Here}</h2>
 							</header>
-
-							
 
 						</div>
 					</section>
-    <section id="about" class="">
-      <div style="margin-left:45px">
 
-        <section id="topic" class="three">
-	  <div class="container">
-	    <header>
-	      <h2>Topic Area</h2>
-	    </header>
-	    <p>{Describe the subgroup in a paragraph here}</p>
-	    </p>
-	  </div>
-	</section>
+				<section id="topic" class="three">
+                      <div class="container">
+                        <header>
+                          <h2>Topic Area</h2>
+                        </header>
+                        <p style="text-align: left;">{Describe the subgroup in a paragraph here.}</p>
+                      </div>
+                    </section>
 
-        <section id="subgroups" class="three">
-	  <div class="container">
-	    <header>
-	      <h2>Membership</h2>
-	    </header>
-	    <p><b>Subgroup Contact:</b><br/>
-	      {Name}<br/>{Institute}
-	    </p>
-	    
-	    <ul class="threecol">
-	      <li>{Member 1}<br/>{intstitute}</li>
-	      <li>{Member 2}<br/>{intstitute}</li>
-	      <li>{Member 3}<br/>{intstitute}</li>
-	    </ul>
-	  </div>
-	</section>
+                <section id="membership" class="three">
+                      <div class="container">
+                        <header>
+                          <h2>Membership</h2>
+                        </header>
+                        <p><strong>Subgroup Contact:</strong><br/>
+                          {Name}<br/>
+                          {Institute}
+                        </p>
+                        <hr>
+                        <h3>Active Members</h3>
+                        <div class="grid-container2">
+                            <div>{Member 1 Name}<br/><small>{Institute}</small></div>
+                            <div>{Member 2 Name}<br/><small>{Institute}</small></div>
+                            <div>{Member 3 Name}<br/><small>{Institute}</small></div>
+                            <div>{Member 4 Name}<br/><small>{Institute}</small></div>
+                        </div>
+                      </div>
+                    </section>
 
-        <section id="science" class="three">
-	  <div class="container">
-	    <header>
-	      <h2>LSST Science</h2>
-	    </header>
-	  </div>
-	  
-	  <p>LSST data on {topic area} will help to
-	  address the following science quesitons:</p>
+                <section id="science" class="three">
+                      <div class="container">
+                        <header>
+                          <h2>LSST Science</h2>
+                        </header>
 
-	  <h3>{Question 1}</h3>
+                          <p style="text-align: left;">LSST data on {topic area} will help to address the following science questions:</p>
 
-	  <p>{elaboration 1}</p>
+                          <h3 style="text-align: left;">{Question 1}</h3>
+                          <p style="text-align: left;">{Elaboration 1}</p>
 
-	  <h3>{Question 2}</h3>
+                          <h3 style="text-align: left;">{Question 2}</h3>
+                          <p style="text-align: left;">{Elaboration 2}</p>
 
-	  <p>{elaboration 2}</p>
+                          <h3 style="text-align: left;">{Question 3}</h3>
+                          <p style="text-align: left;">{Elaboration 3}</p>
+                      </div>
+                    </section>
 
-	  <h3>{Question 3}</h3>
+                <section id="roadmap" class="three">
+                      <div class="container">
+                        <header>
+                          <h2>Roadmap</h2>
+                        </header>
+                        <p>The work anticipated for this subgroup is described in the TVS Roadmap living document <a href="../roadmap.html">here</a>.</p>
+                      </div>
+                    </section>
 
-	  <p>{elaboration 3}</p>
+                <section id="references" class="three">
+                      <div class="container">
+                        <header>
+                          <h2>References</h2>
+                        </header>
+                        <ul class="references">
+                          <li><a href="http://adsabs.harvard.edu/abs/XXX">{Author et al. YYYY, Journal}</a> "{Title}"<br/>
+                          {One-line description.}
+                          </li>
+                        </ul>
+                      </div>
+                    </section>
+			</div>
 
+        <script src="assets/js/jquery.min.js"></script>
+            <script src="assets/js/jquery.scrolly.min.js"></script>
+            <script src="assets/js/jquery.scrollzer.min.js"></script>
+            <script src="assets/js/skel.min.js"></script>
+            <script src="assets/js/util.js"></script>
+            <script src="assets/js/main.js"></script>
 
-	</section>
-
-        <section id="roadmap" class="three">
-	  <div class="container">
-	    <header>
-	      <h2>Roadmap</h2>
-	    </header>
-
-	    <p>{description/links to roadmap work}</p>
-
-	  </div>
-	</section>
-
-        <section id="references" class="three">
-	  <div class="container">
-	    <header>
-	      <h2>References</h2>
-	    </header>
-
-	    <ul class="references">
-	      <li><a href="http://adsabs.harvard.edu/abs/XXX">{Author et al. YYYY, Journal}</a> "{title}"<br/>
-              {one-line description}
-	      </li>
-	    </ul>
-
-	  </div>
-	</section>
-
-      </div>
-    </section>
-    </div>
 </body>
 </html>
