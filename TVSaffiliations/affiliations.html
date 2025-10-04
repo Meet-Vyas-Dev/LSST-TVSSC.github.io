@@ -1,3 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LSST TVS Collaboration Chord Diagram</title>
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+
+        /* FIX: Moved deprecated link colors from body tag to CSS */
+        a:link, a:visited, a:active {
+            color: SteelBlue;
+        }
+
+        #tooltip {
+            color: white;
+            opacity: .9;
+            background: #333;
+            padding: 5px;
+            border: 1px solid lightgrey;
+            border-radius: 5px;
+            position: absolute;
+            z-index: 10;
+            visibility: hidden;
+            white-space: nowrap;
+        }
+
+        #circle circle {
+            fill: none;
+            pointer-events: all;
+        }
+
+        path.group {
+            fill-opacity: .8;
+        }
+
+        path.chord {
+            fill-opacity: .8;
+            stroke: #000;
+            stroke-width: .25px;
+        }
+
+        #circle:hover path.fade {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="margin-left: 10px;">
+        <p>This is a chord diagram showing the structure of the <a href="https://lsst-tvssc.github.io/">LSST Transients and Variable Stars Collaboration - TVS</a> and the affiliation to LSST TVS subgroups. Each pair linked by a chord represents two subgroup affiliations that are shared by a number of members proportional to the width of the chord.</p>
+        <p>
+            Roll over each wedge to see more information about each subgroup pair and on the arc to know more about the subgroup.
+            The code is on <a href="https://github.com/fedhere/TVSaffiliations">github</a>, text is parsed and gathered in python and the graphics are created in <a href="https://d3js.org/">d3</a>, leveraging <b>heavily</b> off this demo <a href="https://www.delimited.io/blog/2013/12/8/chord-diagrams-in-d3">blogpost</a> by <a href="https://www.delimited.io/about/">Steve Hall</a>.
+        </p>
+    </div>
+
+    <div id="charts"></div>
+    <div id="tooltip"></div>
+
+    <script type="text/javascript" src="https://d3js.org/d3.v3.min.js"></script>
+    <script src="lib/underscore.js"></script>
+    <script src="scripts/js/mapper.js"></script>
+
+    <script>
+        //*******************************************************************
+        //  CREATE MATRIX AND MAP
+        //*******************************************************************
+        d3.csv('data/affiliations.csv', function(error, data) {
+            const mpr = chordMpr(data);
+            
+            _.each(data, function(d) {
+                mpr.addToMap(d.word1, d.field, d.fielddef)
+            });
+
+            mpr.setFilter(function(row, a, b) {
+                return (row.word1 === a.name && row.word2 === b.name)
+            })
+            .setAccessor(function(recs, a, b) {
+                if (!recs[0]) return 0;
+                return {
+                    count: recs[0].count,
+                    field: recs[0].field,
+                    valueOf: value,
+                    fielddef: recs[0].fielddef
+                };
+            });
+            
+            drawChords(mpr.getMatrix(), mpr.getMap());
+
+            function value() {
+                return +this.count;
+            }
+        });
+
+        //*******************************************************************
+        //  DRAW THE CHORD DIAGRAM
+        //*******************************************************************
+        function drawChords(matrix, mmap) {
+            
+            // This function attempts to load data asynchronously, but the main script
+            // doesn't wait for it to complete. `tostats` will be undefined outside this function.
+            function readstats() {
+                d3.csv("data/affiliationsNumbers.csv", function(error, data) {
+                    data.map(function(d) {
+                        // console.log("subg:", d.subg)
+                        let subg = d.subg;
+                        let p = parseInt(d.tot)
+                        return {d};
+                    });
+                    // console.log("tostats", data);
+                    return data
+                });
+            }
+            const tostats = readstats();
+
+            const subgroups = {
+                'Classification/Characterization': "https://tvs.science.lsst.org/node/10",
+                'DistanceScale': "https://www.lsstcorp.org/sciencewiki/index.php?title=Distance_Scale",
+                'FastTransients': "https://tvs.science.lsst.org/node/14",
+                'Galactic': "https://tvs.science.lsst.org/node/19",
+                'InteractingBinaries': "https://tvs.science.lsst.org/node/20",
+                'MagneticallyActiveStars': "https://www.lsstcorp.org/sciencewiki/index.php?title=Magnetically_Active_Stars",
+                'MicrolensingSubgroup': "https://www.lsstcorp.org/sciencewiki/index.php?title=Microlensing_Subgroup",
+                'MultiwavelengthCharacterization/Counterparts': "https://tvs.science.lsst.org/node/11",
+                'Non-degenerateEruptiveVariables': "https://tvs.science.lsst.org/node/6",
+                'PulsatingVariables': "https://www.lsstcorp.org/sciencewiki/index.php?title=Pulsating_Variables",
+                'Supernovae': "https://tvs.science.lsst.org/node/7",
+                'TidalDisruptionEvents': "https://tvs.science.lsst.org/node/13#overlay-context=subgroups",
+                'TransitingPlanets': "https://tvs.science.lsst.org/node/18"
+            };
+
+            // FIX: Removed unused color arrays and simplified to one.
+            const twentycols = ['#9C6744', '#C9BEB9', "#C8DAE8", '#CFA07E', '#C4BAA1', '#C2B6BF', '#85889E', "#4682B4", '#9C7989', '#91919C', '#242B27', '#212429', '#99677B', '#36352B', '#33332F', '#2B2B2E', '#2E1F13', '#2B242A', '#918A59', '#6E676C', '#6E4752', '#6B4A2F', '#998476', '#8A968D', '#968D8A', '#968D96', '#CC855C', '#967860', '#929488', '#949278', '#A0A3BD', '#BD93A1', '#65666B', '#6B5745', '#6B6664', '#695C52', '#56695E', '#69545C', '#565A69', '#696043', '#63635C', '#636150', '#333131', '#332820', '#302D30', '#302D1F', '#2D302F', '#CFB6A3', '#362F2A'];
+            
+            const w = 900, h = 700, r1 = h / 2, r0 = r1 - 100;
+
+            const chord = d3.layout.chord()
+                .padding(.02)
+                .sortSubgroups(d3.descending)
+                .sortChords(d3.descending);
+
+            const arc = d3.svg.arc()
+                .innerRadius(r0)
+                .outerRadius(r0 + 20);
+
+            const svg = d3.select("#charts").append("svg:svg")
+                .attr("width", w)
+                .attr("height", h)
+                .append("svg:g")
+                .attr("id", "circle")
+                .attr("transform", "translate(" + w / 2 + "," + h / 2 + ")");
+
+            svg.append("circle")
+                .attr("r", r0 + 20);
+
+            const rdr = chordRdr(matrix, mmap);
+            chord.matrix(matrix);
+
+            // FIX: Removed dead mouseovergroup function and its commented-out call
+            const g = svg.selectAll("g.group")
+                .data(chord.groups())
+                .enter().append("svg:g")
+                .attr("class", "group");
+
+            g.append("svg:path")
+                .style("stroke", "black")
+                .style("fill", function(d) { return twentycols[d.index] })
+                .attr("d", arc);
+
+            g.append("svg:text")
+                .each(function(d) { d.angle = (d.startAngle + d.endAngle) / 2; })
+                .attr("dy", ".35em")
+                .style("font-family", "helvetica, arial, sans-serif")
+                .style("font-size", "15px")
+                .attr("text-anchor", function(d) { return d.angle > Math.PI ? "end" : null; })
+                .attr("transform", function(d) {
+                    return "rotate(" + (d.angle * 180 / Math.PI - 90) + ")" +
+                           "translate(" + (r0 + 26) + ")" +
+                           (d.angle > Math.PI ? "rotate(180)" : "");
+                })
+                .text(function(d) { return rdr(d).gname; });
+
+            const chordPaths = svg.selectAll("path.chord")
+                .data(chord.chords())
+                .enter().append("svg:path")
+                .attr("class", "chord")
+                .style("fill", function(d) { return (twentycols[d.source.index]); })
+                .attr("d", d3.svg.chord().radius(r0))
+                .on("mouseover", function(d) {
+                    d3.select("#tooltip")
+                        .style("visibility", "visible")
+                        .html(chordTip(rdr(d)))
+                        .style("top", (d3.event.pageY - 100) + "px")
+                        .style("left", (d3.event.pageX - 100) + "px");
+                })
+                .on("mouseout", function(d) {
+                    d3.select("#tooltip").style("visibility", "hidden")
+                });
+
+            function chordTip(d) {
+                const p = d3.format(".2%"), q = d3.format(",r");
+                return "Chord Info:<br/>" +
+                    p(d.svalue / d.stotal) + " (" + q(d.svalue) + ") of the people in the " +
+                    d.sname + " subgroup <br/>are also in " + d.tname;
+            }
+
+            function groupTip(d) {
+                // Returns the URL for the subgroup from the map defined above.
+                return subgroups[d.gname];
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+
 <!-- <!DOCTYPE html>
 <html>
   <head>
@@ -266,221 +486,3 @@ twentycols = ['#9C6744','#C9BEB9', "#C8DAE8",'#CFA07E','#C4BAA1','#C2B6BF','#858
 
   </body>
 </html> -->
-
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>LSST TVS Collaboration Chord Diagram</title>
-    <style>
-        body {
-            font-family: sans-serif;
-        }
-
-        /* FIX: Moved deprecated link colors from body tag to CSS */
-        a:link, a:visited, a:active {
-            color: SteelBlue;
-        }
-
-        #tooltip {
-            color: white;
-            opacity: .9;
-            background: #333;
-            padding: 5px;
-            border: 1px solid lightgrey;
-            border-radius: 5px;
-            position: absolute;
-            z-index: 10;
-            visibility: hidden;
-            white-space: nowrap;
-        }
-
-        #circle circle {
-            fill: none;
-            pointer-events: all;
-        }
-
-        path.group {
-            fill-opacity: .8;
-        }
-
-        path.chord {
-            fill-opacity: .8;
-            stroke: #000;
-            stroke-width: .25px;
-        }
-
-        #circle:hover path.fade {
-            display: none;
-        }
-    </style>
-</head>
-
-<body>
-    <div style="margin-left: 10px;">
-        <p>This is a chord diagram showing the structure of the <a href="https://lsst-tvssc.github.io/">LSST Transients and Variable Stars Collaboration - TVS</a> and the affiliation to LSST TVS subgroups. Each pair linked by a chord represents two subgroup affiliations that are shared by a number of members proportional to the width of the chord.</p>
-        <p>
-            Roll over each wedge to see more information about each subgroup pair and on the arc to know more about the subgroup.
-            The code is on <a href="https://github.com/fedhere/TVSaffiliations">github</a>, text is parsed and gathered in python and the graphics are created in <a href="https://d3js.org/">d3</a>, leveraging <b>heavily</b> off this demo <a href="https://www.delimited.io/blog/2013/12/8/chord-diagrams-in-d3">blogpost</a> by <a href="https://www.delimited.io/about/">Steve Hall</a>.
-        </p>
-    </div>
-
-    <div id="charts"></div>
-    <div id="tooltip"></div>
-
-    <script type="text/javascript" src="https://d3js.org/d3.v3.min.js"></script>
-    <script src="lib/underscore.js"></script>
-    <script src="scripts/js/mapper.js"></script>
-
-    <script>
-        //*******************************************************************
-        //  CREATE MATRIX AND MAP
-        //*******************************************************************
-        d3.csv('data/affiliations.csv', function(error, data) {
-            const mpr = chordMpr(data);
-            
-            _.each(data, function(d) {
-                mpr.addToMap(d.word1, d.field, d.fielddef)
-            });
-
-            mpr.setFilter(function(row, a, b) {
-                return (row.word1 === a.name && row.word2 === b.name)
-            })
-            .setAccessor(function(recs, a, b) {
-                if (!recs[0]) return 0;
-                return {
-                    count: recs[0].count,
-                    field: recs[0].field,
-                    valueOf: value,
-                    fielddef: recs[0].fielddef
-                };
-            });
-            
-            drawChords(mpr.getMatrix(), mpr.getMap());
-
-            function value() {
-                return +this.count;
-            }
-        });
-
-        //*******************************************************************
-        //  DRAW THE CHORD DIAGRAM
-        //*******************************************************************
-        function drawChords(matrix, mmap) {
-            
-            // This function attempts to load data asynchronously, but the main script
-            // doesn't wait for it to complete. `tostats` will be undefined outside this function.
-            function readstats() {
-                d3.csv("data/affiliationsNumbers.csv", function(error, data) {
-                    data.map(function(d) {
-                        // console.log("subg:", d.subg)
-                        let subg = d.subg;
-                        let p = parseInt(d.tot)
-                        return {d};
-                    });
-                    // console.log("tostats", data);
-                    return data
-                });
-            }
-            const tostats = readstats();
-
-            const subgroups = {
-                'Classification/Characterization': "https://tvs.science.lsst.org/node/10",
-                'DistanceScale': "https://www.lsstcorp.org/sciencewiki/index.php?title=Distance_Scale",
-                'FastTransients': "https://tvs.science.lsst.org/node/14",
-                'Galactic': "https://tvs.science.lsst.org/node/19",
-                'InteractingBinaries': "https://tvs.science.lsst.org/node/20",
-                'MagneticallyActiveStars': "https://www.lsstcorp.org/sciencewiki/index.php?title=Magnetically_Active_Stars",
-                'MicrolensingSubgroup': "https://www.lsstcorp.org/sciencewiki/index.php?title=Microlensing_Subgroup",
-                'MultiwavelengthCharacterization/Counterparts': "https://tvs.science.lsst.org/node/11",
-                'Non-degenerateEruptiveVariables': "https://tvs.science.lsst.org/node/6",
-                'PulsatingVariables': "https://www.lsstcorp.org/sciencewiki/index.php?title=Pulsating_Variables",
-                'Supernovae': "https://tvs.science.lsst.org/node/7",
-                'TidalDisruptionEvents': "https://tvs.science.lsst.org/node/13#overlay-context=subgroups",
-                'TransitingPlanets': "https://tvs.science.lsst.org/node/18"
-            };
-
-            // FIX: Removed unused color arrays and simplified to one.
-            const twentycols = ['#9C6744', '#C9BEB9', "#C8DAE8", '#CFA07E', '#C4BAA1', '#C2B6BF', '#85889E', "#4682B4", '#9C7989', '#91919C', '#242B27', '#212429', '#99677B', '#36352B', '#33332F', '#2B2B2E', '#2E1F13', '#2B242A', '#918A59', '#6E676C', '#6E4752', '#6B4A2F', '#998476', '#8A968D', '#968D8A', '#968D96', '#CC855C', '#967860', '#929488', '#949278', '#A0A3BD', '#BD93A1', '#65666B', '#6B5745', '#6B6664', '#695C52', '#56695E', '#69545C', '#565A69', '#696043', '#63635C', '#636150', '#333131', '#332820', '#302D30', '#302D1F', '#2D302F', '#CFB6A3', '#362F2A'];
-            
-            const w = 900, h = 700, r1 = h / 2, r0 = r1 - 100;
-
-            const chord = d3.layout.chord()
-                .padding(.02)
-                .sortSubgroups(d3.descending)
-                .sortChords(d3.descending);
-
-            const arc = d3.svg.arc()
-                .innerRadius(r0)
-                .outerRadius(r0 + 20);
-
-            const svg = d3.select("#charts").append("svg:svg")
-                .attr("width", w)
-                .attr("height", h)
-                .append("svg:g")
-                .attr("id", "circle")
-                .attr("transform", "translate(" + w / 2 + "," + h / 2 + ")");
-
-            svg.append("circle")
-                .attr("r", r0 + 20);
-
-            const rdr = chordRdr(matrix, mmap);
-            chord.matrix(matrix);
-
-            // FIX: Removed dead mouseovergroup function and its commented-out call
-            const g = svg.selectAll("g.group")
-                .data(chord.groups())
-                .enter().append("svg:g")
-                .attr("class", "group");
-
-            g.append("svg:path")
-                .style("stroke", "black")
-                .style("fill", function(d) { return twentycols[d.index] })
-                .attr("d", arc);
-
-            g.append("svg:text")
-                .each(function(d) { d.angle = (d.startAngle + d.endAngle) / 2; })
-                .attr("dy", ".35em")
-                .style("font-family", "helvetica, arial, sans-serif")
-                .style("font-size", "15px")
-                .attr("text-anchor", function(d) { return d.angle > Math.PI ? "end" : null; })
-                .attr("transform", function(d) {
-                    return "rotate(" + (d.angle * 180 / Math.PI - 90) + ")" +
-                           "translate(" + (r0 + 26) + ")" +
-                           (d.angle > Math.PI ? "rotate(180)" : "");
-                })
-                .text(function(d) { return rdr(d).gname; });
-
-            const chordPaths = svg.selectAll("path.chord")
-                .data(chord.chords())
-                .enter().append("svg:path")
-                .attr("class", "chord")
-                .style("fill", function(d) { return (twentycols[d.source.index]); })
-                .attr("d", d3.svg.chord().radius(r0))
-                .on("mouseover", function(d) {
-                    d3.select("#tooltip")
-                        .style("visibility", "visible")
-                        .html(chordTip(rdr(d)))
-                        .style("top", (d3.event.pageY - 100) + "px")
-                        .style("left", (d3.event.pageX - 100) + "px");
-                })
-                .on("mouseout", function(d) {
-                    d3.select("#tooltip").style("visibility", "hidden")
-                });
-
-            function chordTip(d) {
-                const p = d3.format(".2%"), q = d3.format(",r");
-                return "Chord Info:<br/>" +
-                    p(d.svalue / d.stotal) + " (" + q(d.svalue) + ") of the people in the " +
-                    d.sname + " subgroup <br/>are also in " + d.tname;
-            }
-
-            function groupTip(d) {
-                // Returns the URL for the subgroup from the map defined above.
-                return subgroups[d.gname];
-            }
-        }
-    </script>
-</body>
-</html>
