@@ -12,6 +12,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 	</head>
+
 <body class="is-preload">
     <div id="wrapper">
         <header id="header">
@@ -23,9 +24,9 @@
                 <ul>
                     <li class="search">
                         <a class="fa-search" href="#search">Search</a>
-                        <form id="search" method="get" action="#">
-                            <input type="text" name="query" placeholder="Search" />
-                        </form>
+                        <form id="search" method="get" action="search.html">
+							<input type="text" name="query" placeholder="Search" />
+						</form>
                     </li>
                     <li class="menu">
                         <a class="fa-bars" href="#menu">Menu</a>
@@ -36,9 +37,9 @@
 
         <section id="menu">
             <section>
-                <form class="search" method="get" action="#">
-                    <input type="text" name="query" placeholder="Search" />
-                </form>
+                <form id="search" method="get" action="search.html">
+				<input type="text" name="query" placeholder="Search" />
+				</form>
             </section>
 
             <section>
@@ -79,7 +80,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="https://drive.google.com/drive/folders/1PVaUMowhT3SWytLrL5VzNqYUK5RYRP3x?usp=sharing" id="members-link" class="skel-layers-ignoreHref" target="_blank" rel="noopener noreferrer">
+                        <a href="documents.html" id="members-link" class="skel-layers-ignoreHref" target="_blank" rel="noopener noreferrer">
                             <i class="fas fa-file" aria-hidden="true"></i> Documents
                         </a>
                     </li>
@@ -94,7 +95,7 @@
                         </a>
                     </li>
                 </ul>
-                <a href="#" class="button large fit">Log In</a>
+                <!-- <a href="#" class="button large fit">Log In</a> -->
             </section>
         </section> 
 
