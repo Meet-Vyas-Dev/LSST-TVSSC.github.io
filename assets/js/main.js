@@ -5,7 +5,7 @@
 */
 $(function() {
 
-    $("#nav").load("menu.html");
+    $("#nav").load("menu.html?v=2");
 
     function activeNav() {
         var pgurl = window.location.href.substr(window.location.href.lastIndexOf("/")+1);

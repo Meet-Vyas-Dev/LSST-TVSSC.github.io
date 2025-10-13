@@ -10,81 +10,94 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
 	</head>
-	<body class="is-preload">
+<body class="is-preload">
+    <div id="wrapper">
+        <header id="header">
+            <h1><a href="https://lsst-tvssc.github.io/index.html#top">LSST TVS SC</a></h1>
+            <nav class="links">
+                <div id="nav"></div>
+            </nav>
+            <nav class="main">
+                <ul>
+                    <li class="search">
+                        <a class="fa-search" href="#search">Search</a>
+                        <form id="search" method="get" action="search.html">
+							<input type="text" name="query" placeholder="Search" />
+						</form>
+                    </li>
+                    <li class="menu">
+                        <a class="fa-bars" href="#menu">Menu</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+        <section id="menu">
+            <section>
+                <form id="search" method="get" action="search.html">
+				<input type="text" name="query" placeholder="Search" />
+				</form>
+            </section>
 
-				<!-- Header -->
-					<header id="header">
-						<h1><a href="https://lsst-tvssc.github.io/index.html#top">LSST TVS SC</a></h1>
-						<nav class="links">
-
-						<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-
-                            <div id="nav"></div>
-
-						</nav>
-							<!--
-							-->
-							<nav class="main">
-							<ul>
-								<li class="search">
-									<a class="fa-search" href="#search">Search</a>
-									<form id="search" method="get" action="#">
-										<input type="text" name="query" placeholder="Search" />
-									</form>
-								</li>
-								<li class="menu">
-									<a class="fa-bars" href="#menu">Menu</a>
-								</li>
-							</ul>
-						</nav>
-					</header>
-
-				<!-- Menu -->
-					<section id="menu">
-                        <!-- Search -->
-							<section>
-								<form class="search" method="get" action="#">
-									<input type="text" name="query" placeholder="Search" />
-								</form>
-							</section>
-
-						<!-- Search -->
-							<section>
-                               <ul>
-								<li><a href="index.html#top" id="top-link" class="skel-layers-ignoreHref"><span class="icon fa-home">Intro</span></a></li>
-
-                                <li><a href="members.html" id="members-link" class="skel-layers-ignoreHref"><span class="icon fa-user">Members and roles</span></a></li>
-
-								<li><a href="subgroups.html" id="portfolio-link" class="skel-layers-ignoreHref"><span class="icon fa-th">Subgroups</span></a></li>
-
-                                <li><a href="taskForces.html" id="portfolio-link" class="skel-layers-ignoreHref"><span class="icon fa-th">Task Forces</span></a></li>
-
-																<li><a href="lsst_sci_prep.html" id="portfolio-link" class="skel-layers-ignoreHref"><span class="icon fa-th">Preparatory Science Program</span></a></li>
-
-																<li><a href="https://tvs.science.lsst.org/apply" id="application-link" class="skel-layers-ignoreHref"><span class="icon fa-edit">Become a member</span></a></li>
-
-                                <li><a href="index.html#contact" id="contact-link" class="skel-layers-ignoreHref"><span class="icon fa-envelope">Contact us</span></a></li>
-
-								<li><a href="https://drive.google.com/drive/folders/1PVaUMowhT3SWytLrL5VzNqYUK5RYRP3x?usp=sharing" id="members-link" class="skel-layers-ignoreHref"><span class="icon fa-file">Documents</span></a></li>
-
-								<li><a href="events.html" id="members-link" class="skel-layers-ignoreHref"><span class="icon fa-calendar">Events</span></a></li>
-
-								<li><a href="meeting_notes.html" id="members-link" class="skel-layers-ignoreHref"><span class="icon fa-calendar">Meeting Notes</span></a></li>
-
-								</ul>
-                                <a href="#" class="button large fit">Log In</a>
-
-							</section>
-
-						<!-- Links -->
-
-                </section>
+            <section>
+                <ul>
+                    <li>
+                        <a href="index.html#top" id="top-link" class="skel-layers-ignoreHref">
+                            <i class="fas fa-home" aria-hidden="true"></i> Intro
+                        </a>
+                    </li>
+                    <li>
+                        <a href="members.html" id="members-link" class="skel-layers-ignoreHref">
+                            <i class="fas fa-user" aria-hidden="true"></i> Members and roles
+                        </a>
+                    </li>
+                    <li>
+                        <a href="subgroups.html" id="portfolio-link" class="skel-layers-ignoreHref">
+                            <i class="fas fa-th" aria-hidden="true"></i> Subgroups
+                        </a>
+                    </li>
+                    <li>
+                        <a href="taskForces.html" id="portfolio-link" class="skel-layers-ignoreHref">
+                            <i class="fas fa-th" aria-hidden="true"></i> Task Forces
+                        </a>
+                    </li>
+                    <li>
+                        <a href="lsst_sci_prep.html" id="portfolio-link" class="skel-layers-ignoreHref">
+                            <i class="fas fa-th" aria-hidden="true"></i> Preparatory Science Program
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://tvs.science.lsst.org/apply" id="application-link" class="skel-layers-ignoreHref" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-edit" aria-hidden="true"></i> Become a member
+                        </a>
+                    </li>
+                    <li>
+                        <a href="index.html#contact" id="contact-link" class="skel-layers-ignoreHref">
+                            <i class="fas fa-envelope" aria-hidden="true"></i> Contact us
+                        </a>
+                    </li>
+                    <li>
+                        <a href="documents.html" id="members-link" class="skel-layers-ignoreHref" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-file" aria-hidden="true"></i> Documents
+                        </a>
+                    </li>
+                    <li>
+                        <a href="events.html" id="members-link" class="skel-layers-ignoreHref">
+                            <i class="fas fa-calendar" aria-hidden="true"></i> Events
+                        </a>
+                    </li>
+                    <li>
+                        <a href="meeting_notes.html" id="members-link" class="skel-layers-ignoreHref">
+                            <i class="fas fa-calendar" aria-hidden="true"></i> Meeting Notes
+                        </a>
+                    </li>
+                </ul>
+                <!-- <a href="#" class="button large fit">Log In</a> -->
+            </section>
+        </section> 
 
 
 				<!-- Main -->
@@ -99,15 +112,61 @@
 									</div>
 								</header>
 								You can learn more about the work of TVS members through the notes of our regular general meetings,
-								which typically take place every two weeks.
-								<div class="grid-container2">
+								which typically take place every two weeks. These notes are publicly available and can be accessed
+                                through the links below. Please note that some notes may be restricted to TVS members only. 
+                <br><br>
+                <div class="table-wrapper">
+                    <table class="default">
+                        <thead>
+                            <tr>
+                                <th>File Name</th>
+                                <th>Link</th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="icon-cell"><i class="fas fa-file-alt"></i> &nbsp; TVS General Telecon Meeting Notes</td>
+                                <td><a href="https://lssttvs.notion.site/0b8d15dadcf3442297d3f59d56371541?v=85768534138649359043fd3fa41f618c" target="_blank">View Document</a></td>
+                                
+                            </tr>
+                            <tr>
+                                <td class="icon-cell"><i class="fas fa-file-alt"></i> &nbsp; TVS Microlensing Subgroup</td>
+                                <td><a href="https://colossal-growth-68c.notion.site/02e9a0c594b64d2385f970e261d68b94?v=69f22e735e5e4c8c86a5350d43e435fc" target="_blank">View Document</a></td>
+                                
+                            </tr>
+                            <tr>
+                                <td class="icon-cell"><i class="fas fa-file-alt"></i> &nbsp; TVS Software Task Force Meeting Notes</td>
+                                <td><a href="https://docs.google.com/document/d/1qPdo-bK7LHmd6_7iZh1oTDfVi0nJAVa7qFx2GKMlsis/edit?usp=drive_link" target="_blank">View Document</a></td>
+     
+                            </tr>
+                            <tr>
+                                <td class="icon-cell"><i class="fas fa-file-pdf"></i> &nbsp; TVS Survey Strategy Task Force Meeting Notes</td>
+                                <td><a href="https://lssttvs.notion.site/Meeting-Notes-56be75a22e834884a7c2e859be5cb3b0" target="_blank">View Document</a></td>
+                            </tr>
+          
+                        </tbody>
+                    </table>
+                </div>
+            </article>
+        </div>
+								<!-- <div class="grid-container2">
 									<div>
-											<h3><a href="https://lssttvs.notion.site/0b8d15dadcf3442297d3f59d56371541?v=85768534138649359043fd3fa41f618c">Meeting Notes</a></h3>
+											<h3><a href="https://lssttvs.notion.site/0b8d15dadcf3442297d3f59d56371541?v=85768534138649359043fd3fa41f618c"> TVS Telecon Meeting Notes</a></h3>
 									</div>
-						    </div>
+									<div>
+											<h3><a href="https://colossal-growth-68c.notion.site/02e9a0c594b64d2385f970e261d68b94?v=69f22e735e5e4c8c86a5350d43e435fc"> TVS Microlensing Subgroup</a></h3>
+									</div>
+									<div>
+											<h3><a href="https://lssttvs.notion.site/Meetings-e45a3ef46ead48718edbe29126da7eb9"> TVS Software Task Force Meeting Notes</a></h3>
+									</div>
+									<div>
+											<h3><a href="https://lssttvs.notion.site/Meeting-Notes-56be75a22e834884a7c2e859be5cb3b0"> TVS Survey Strategy Task Force Meeting Notes</a></h3>
+									</div>
+						    	</div> -->
 
-							</article>
-					</div>
+							<!-- </article>
+					</div> -->
 
 				<!-- Sidebar -->
 					<section id="sidebar">
@@ -117,208 +176,22 @@
 								<a href="#" class="logo"><img src="images/MEDLogoBLK.jpg" alt="" /></a>
 								<header>
 									<h2>Rubin LSST Transients and Variable Stars</h2>
-									<p>Science Collaboration </p>
+									<p>Science Collaboration</p>
 								</header>
 							</section>
 
-						<!-- Mini Posts -->
-							<section>
-                                <h3>Latest</h3>
-								<div class="mini-posts">
 
-									<!-- Mini Post -->
-										<article class="mini-post">
-											<header>
-												<h3><a href="https://iopscience.iop.org/article/10.3847/2515-5172/ab812a">March 2020</a></h3>
-												<time class="published" datetime="2015-10-20">Impact of Rubin Observatory LSST Template Acquisition Strategies on Early Science from the Transients and Variable Stars Science Collaboration: Time-critical Science Cases</time>
-
-											</header>
-											<a href="https://iopscience.iop.org/article/10.3847/2515-5172/ab812a" class="image"><img src="images/rnaas2020_1.png" alt="" /></a>
-										</article>
-
-									<!-- Mini Post -->
-										<article class="mini-post">
-											<header>
-												<h3><a href="https://iopscience.iop.org/article/10.3847/2515-5172/ab8129">March 2020</a></h3>
-												<time class="published" datetime="2015-10-19">Impact of Rubin Observatory LSST Template Acquisition Strategies on Early Science from the Transients and Variable Stars Science Collaboration: Non-time-critical Science Cases</time>
-
-											</header>
-											<a href="https://iopscience.iop.org/article/10.3847/2515-5172/ab8129" class="image"><img src="images/rnaas2020_2.png" alt="" /></a>
-										</article>
-
-
-
-								</div>
-							</section>
-
-						<!-- Posts List -->
-
-						<!-- Subgroup side menu -->
-
-						<!-- subgruous side menu -->
-								<section>
-                                <h2>subgroups</h2>
-                                <ul class="posts">
-									<li>
-
-										<article>
-											<header>
-                                                <h3>JEDI: Justice, Equity, Diversity &amp; Inclusion</h3>
-                                                coordinators:  <a href="http://www.astropa.inaf.it/en/personal-pages/sara-bonito/">Sara Bonito, INAF - Osservatorio Astronomico di Palermo</a></header>
-                                            <a href="#" class="author"><img src="subgroups/jedi.png" alt="" /></a>
-																		<br></article></li>
-
-										<li>
-										<article>
-											<header>
-                                                <h3><a href="subgroups/subgroup_anomalies.html">Anomalies and true novelties</a>
-
-                                                </h3>
-                                                coordinator:
-                                                <a href="http:// fbb.space/">Federica Bianco</a>, University of Delaware</header>
-                                                <a href="subgroups/subgroup_anomalies.html" class="author"><img src="subgroups/images/fed_avatar.png" alt="" /></a>
-                                            <br></article></li>
-
-                                     <li>
-
-												<article>
-												<header>
-												<h3>Classification &amp; Characterization</h3>
-																						                                              coordinators:   <a href="https://konkoly.hu/staff/rszabo/index.html">
-                                                    Robert Szabo</a>, Konkoly
-                                                      <a href="https://www.vanderbilt.edu/datascience/person/nina-hernitschek/">Nina Hernitschek</a>, Vanderbilt</header>
-                                                    <a href="#" class="author">   <img src="subgroups/images/robert_szabo_avatar.png" alt="" /></a>
-                                    <br></article></li>
-
-                                    <li>
-										<article>
-											<header>
-												<h3>Fast Transients
-
-                                                </h3>
-                                                coordinator:
-                                                <a href="https://users.obs.carnegiescience.edu/mdrout/">Maria Drout</a>, Carnegie-Dunlap</header>
-                                                <a href="#" class="author"><img src="subgroups/images/drout_avatar.png" alt="" /></a>
-                                            <br></article></li>
-												<li>
-													<article>
-														<header>
-															<h3>Distance Scales</h3>
-																						coordinators:
-																						Marcella Marconi, INAF - Osservatorio Astronomico di Capodimonte
-																						Lovro Palaversa, Ruđer Bošković Institute
-																					</header>
-																				<br></article></li>
-
-                                    <li>
-										<article>
-											<header>
-												 <h3>Interacting Binaries
-                                                </h3>
-                                                coordinator:  <br>
-                                                <a href="http://clusty.ast.villanova.edu/aprsa/">Andrej Prsa</a>, Villanova
-                                                <a href="http://depts.washington.edu/astron/profile/szkody-paula/">Paula Szkody</a>,
-                                                UW</header>
-                                                <a href="#" class="author"><img src="subgroups/images/eb_avatar.png" alt="" /></a>
-                                                <br></article></li>
-
-                            <li>
-										<article>
-											<header>
-										          <h3><a href="subgroups/subgroup_magstars.html">Magnetically Active Stars</a>
-                                                </h3>
-                                                coordinators:
-                                                <a href="https://staff.ucar.edu/users/egeland">Ricky Egeland</a>, High Altitude Observatory</header>
-                                                <a href="subgroups/subgroup_magstars.html" class="author"><img src="subgroups/images/ricky_avatar.png" alt="" /></a>
-                                                <br></article></li>
-
-
-                                 <li>
-				                        <article>
-											<header>
-                                                <h3><a href="subgroups/subgroup_microlensing.html">Microlensing Subgroup</a>
-                                                </h3>
-                                                coordinators:
-                                                <a href="mailto:somayeh.khakpash@gmail.com /">Somayeh Khakpash</a>, UDelaware</header>
-                                                <a href="subgroups/subgroup_microlensing.html" class="author"><img src="subgroups/images/somayeh_avatar.png" alt="" /></a>
-                                            <br></article></li>
-
-                            <li>
-										<article>
-											<header>
-												<h3>Multiwavelength Characterization and Counterparts</h3>
-                                                coordinators:
-                                                <a href="http://www.physics.northwestern.edu/people/faculty/core-faculty/raffaella%20margutti.html">Raffaella Margutti</a>, NorthWestern</header>
-                                    <a href="#" class="author"><img src="subgroups/images/Raffaella-Margutti-170x170_avatar.png" alt="" /></a>
-
-                                    </article></li>
-                                <li>
-										<article>
-											<header>
-												<h3>Non-degenerate Eruptive Variables
-                                                </h3>
-                                                coordinators:
-                                                <a hreaf="https://www.oa-roma.inaf.it/irgroup/JEDI/JEDI/People.html">Sara Bonito</a>, INAF</header>
-                                                <a href="#" class="author"><img src="subgroups/images/sara_avatar.png" alt="" /></a>
-                                            <br></article></li>
-
-                            <li>
-										<article>
-											<header>
-												<h3>Pulsating Variables</h3>
-                                                coordinators:
-                                                <a href="https://www1.villanova.edu/villanova/artsci/astronomy/meet_us.html?mail=kelly.prsa@villanova.edu&xsl=bio_long">Kelly Hambleton</a>, Villanova</header>
-                                                <a href="#" class="author"><img src="subgroups/images/hambleton_avatar.png" alt="" /></a>
-                                            <br></article></li>
-
-                            <li>
-										<article>
-											<header>
-												<h3><a href="subgroups/subgroup_supernovae.html">Supernovae</a></h3>
-                                                coordinators: <a href="http://depts.washington.edu/astron/profile/graham-melissa-l/">Melissa Graham</a>, UW</header>
-                                                <a href="subgroups/subgroup_supernovae.html" class="author"><img src="subgroups/images/melissa_avatar.png" alt="" /></a>
-                                            <br></article></li>
-
-                            <li>
-										<article>
-											<header>
-												<h3><a href="subgroups/subgroup_tde.html">Tidal Disruption Events</a></h3>
-                                                coordinators:  <a hreaf="https://cosmo.nyu.edu/sjoert/">Sjoert van Velzen</a>, Leiden Observatory </header>
-                                            <a href="subgroups/subgroup_tde.html" class="author"><img src="subgroups/images/sjoert_avatar.png" alt="" /></a>
-                                            <br></article></li>
-
-                            <li>
-										<article>
-											<header>
-												<h3>Transiting Planets</h3>
-                                                coordinators:  <a href="http://astro.phy.vanderbilt.edu/~lundmb/">Michael Lund</a>,
-				                                JPL</header>
-                                                <a href="#" class="author"><img src="subgroups/images/Lundphoto_crop_avatar.png" alt="" /></a>
-                                            <br></article></li>
-
-
-                            <li>
-                    <h2>currently inactive subgroups</h2>
-                    <div class="grid-container2">
-
-                        <div>
-                            Cosmological
-                            <br>
-                        </div>
-                        <div>
-                             Galactic
-                            <br>
-                        </div>
-                    </div>
-                        </li></ul>
-							</section>
 
 						<!-- About -->
 							<section class="blurb">
+
+
+
+
 								<h2>About</h2>
                                 <p>TVS is a <a href="https://lsst.org/">Vera C. Rubin Observatory</a> Legacy Survey of Space and Time <a href="https://www.lsstcorporation.org/science-collaborations">Science Collaboration </a> (SC). Our SC is a group focuses preparing to study the transient and variable sky with the revolutionary Legacy Survey of Space and Time  (LSST).</p>
 								<ul class="actions">
-									<li><a href="#" class="button">Learn More</a></li>
+									<li><a href="index.html" class="button">Learn More</a></li>
 								</ul>
 							</section>
 
@@ -333,19 +206,7 @@
 							</section>
 
 					</section>
-
 			</div>
-
-        <div class="bottom">
-
-					<!-- Social Icons -->
-						<ul class="icons">
-							<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-							<li><a href="https://github.com/LSST-TVSSC" class="icon fa-github"><span class="label">Github</span></a></li>
-							<li><a href="#contact" class="icon fa-envelope"><span class="label">Email</span></a></li>
-						</ul>
-
-				</div>
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>

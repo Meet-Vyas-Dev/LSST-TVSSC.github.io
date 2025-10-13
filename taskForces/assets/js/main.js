@@ -117,3 +117,11 @@
 	});
 
 })(jQuery);
+
+function toggleDescription(id) {
+  const content = document.getElementById(id);
+  const icon = content.previousElementSibling.querySelector('.collapse-icon');
+
+  content.classList.toggle('open');
+  icon.classList.toggle('open');
+}

@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<title>LSST-TVS members</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search LSST TVS SC</title>
+    <link rel="stylesheet" href="assets/css/main.css" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         <script> 
             $(function(){
-                // This script will now work because a div with id="includedContent" has been added to the sidebar.
                 $("#includedContent").load("subgroups_sidebar.html"); 
             });
         </script> 
-	</head>
+    <script defer src="assets/js/search.js"></script>
+</head>
 <body class="is-preload">
     <div id="wrapper">
         <header id="header">
@@ -99,29 +99,13 @@
             </section>
         </section> 
 
-				<div id="main">
+    <div id="main">
+        <h2>Search the site</h2>
+        <input type="text" id="searchInput" placeholder="Type your search query..." />
+        <ul id="results"></ul>
+    </div>
 
-					<article class="post">
-						<header>
-							<div class="title">
-								<h2>TVS Roadmap to Science</h2>
-								<div class="content-container" style="overflow: auto;"> <img style="float: right; width: 60%; max-width: 500px; margin-left: 20px; margin-bottom: 20px;" src="images/roadmap.png" alt="TVS Roadmap Diagram">
-									<h3>Explore the outline of our roadmap below and download the full document</h3>
-									<h3><a href="Roadmap/roadmap.pdf">DOWNLOAD OUR ROADMAP</a></h3>
-								</div>
-							</div>
-							<div class="meta">
-								<time class="published" datetime="2022-08">August 2022</time>
-								<a href="#" class="author"><span class="name"></span><img src="images/MEDLogoBLK.jpg" alt="MED Logo" /></a>
-							</div>
-						</header>
-						
-						<div class="iframe-container" style="position: relative; width: 100%; height: 1200px;">
-							<iframe style="border:none; width:100%; height:100%;" src='rmtree.html' title="Interactive Roadmap Tree" allowfullscreen></iframe>
-						</div>
-					</article>
-
-				</div> <section id="sidebar">
+    <section id="sidebar">
 
 					<section id="intro">
 						<a href="#" class="logo"><img src="images/MEDLogoBLK.jpg" alt="MED Logo Black" /></a>
@@ -160,3 +144,4 @@
 
 	</body>
 </html>
+

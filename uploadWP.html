@@ -1,27 +1,50 @@
-<!--
-	Prologue by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>LSST-TVS</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="LSST-TVS: Tools and resources for the LSST Transients and Variable Stars Collaboration." />
     
-	<head>
-		<title>LSST-TVS</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-	</head>
-	<body>    
-        <script>
-            if (window.File && window.FileReader && window.FileList && window.Blob) {
-                alert("File API supported.!");
-            } else {
-                alert(‘The File APIs are not fully supported in this browser.’);
-            }
-        </script>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+    <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+</head>
 
-    </body>
+<body>
+    <script>
+        function showNotification(message, bgColor = "#ddffdd", textColor = "#060") {
+            const note = document.createElement("div");
+            note.textContent = message;
+            note.style.position = "fixed";
+            note.style.bottom = "20px";
+            note.style.left = "50%";
+            note.style.transform = "translateX(-50%)";
+            note.style.background = bgColor;
+            note.style.color = textColor;
+            note.style.padding = "10px 15px";
+            note.style.borderRadius = "8px";
+            note.style.fontFamily = "sans-serif";
+            note.style.boxShadow = "0 2px 5px rgba(0,0,0,0.2)";
+            note.style.zIndex = "9999";
+            document.body.appendChild(note);
+
+            // Fade out after 5 seconds
+            setTimeout(() => {
+                note.style.transition = "opacity 0.5s ease";
+                note.style.opacity = "0";
+                setTimeout(() => note.remove(), 500);
+            }, 5000);
+        }
+
+        if (window.File && window.FileReader && window.FileList && window.Blob) {
+            console.log(" File API supported.");
+            showNotification(" File API supported by your browser.");
+        } else {
+            console.warn("The File APIs are not fully supported in this browser.");
+            showNotification("Your browser does not fully support file handling features. Some functionality may not work.", "#ffdddd", "#900");
+        }
+    </script>
+</body>
 </html>
